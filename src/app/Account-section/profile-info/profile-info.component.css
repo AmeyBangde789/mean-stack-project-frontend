@@ -1,0 +1,112 @@
+
+
+.container{
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin: 20px 3% 20px 3%;
+    gap: 10px;
+}
+.box-2{
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 1000px;
+    margin-top: 20px;
+    padding-left: 70px;   
+    margin-bottom: 20px;
+}
+p {
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+.icons {
+    margin-left: 600px;
+    font-size: 16px;
+    color: rgb(131, 131, 131);
+
+}
+
+.icons:hover{
+    color: rgb(42, 42, 42);
+}
+
+form {
+    margin-bottom: 40px;
+}
+
+.flex {
+    display: flex;
+    margin-top: 30px;
+}
+
+.underline {
+    width: 700px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 2.4vh;
+    font-weight: 700;
+    color: rgb(36, 163, 222);
+    border-bottom: 2px solid rgb(223, 223, 223);
+}
+
+.gender {
+    width: 270px;
+    margin-left: 40px;
+}
+
+.dob {
+    width: 205px;
+}
+
+.input {
+    width: 210px;
+    margin-right: 3%;
+}
+
+.input input {
+    width: 200px;
+    height: 30px;
+}
+
+span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.dob-input {
+    width: 205px;
+}
+
+.radio {
+    width: 30px;
+    height: 14px;
+}
+
+.contact {
+    margin-top: 10px;
+}
+
+.btn-1 {
+    margin-top: 40px;
+    background-color: rgb(253, 56, 56);
+    color: white;
+    height: 50px;
+    width: 200px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-2 {
+    margin-left: 35px;
+    margin-top: 40px;
+    background-color: white;
+    border: 1px solid rgb(253, 56, 56);
+    color:  rgb(253, 56, 56);
+    height: 50px;
+    width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+}

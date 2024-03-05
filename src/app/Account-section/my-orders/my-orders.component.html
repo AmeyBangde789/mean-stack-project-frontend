@@ -1,0 +1,43 @@
+<div class="container">
+    <app-accounts></app-accounts>
+    <div class="box-1">
+        <div *ngFor="let orderData of orderData">
+
+            <div class="box-2">
+                <p class="date"><strong>Ordered on : </strong> {{orderData.createdAt | date:'dd/MM/yyyy' }}</p>
+                <div *ngFor="let product of orderData.products" class="flex">
+
+                    <div class="img" routerLink="/details/{{product.productId}}"><img [src]="product.productImage"
+                            alt="{{ product.productName }}" style="width: 100px; height: 100px;"></div>
+                    <div class="info" routerLink="/details/{{product.productId}}">
+                        <p class="name">{{ product.productBrand }} {{ product.productName }}</p>
+                        <p class="weight">Weight: {{product.productWeight}}</p>
+                    </div>
+                    <div *ngIf="product.productDiscount" class="cost"><fa-icon [icon]="rupee"
+                            class="icons user"></fa-icon>
+                        {{product.productCost - product.productCost *
+                        product.productDiscount/100 | number: "1.0-0" }}</div>
+
+                    <div *ngIf="!product.productDiscount" class="cost"><fa-icon [icon]="rupee"
+                            class="icons user"></fa-icon>
+                        {{product.productCost | number: "1.0-0"}}</div>
+
+                    <div class="process">In process</div>
+
+                    <div class="btn"><button class="button-1">Track Order</button>
+                        <button class="button-2">Cancel Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box-3" *ngIf="show">
+            <div class="no-order"><img src="assets/no-order.png"></div>
+            <div class="box-3-text">
+                <h2>No Purchase History</h2>
+                <p>Check back after your next shopping trip !</p>
+                <button>Start Shopping</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,380 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.box {
+    min-width: 64%;
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+
+}
+
+.cart-container {
+    margin-top: 20px;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.card {
+    height: 60vh;
+    width: 70%;
+    margin: 25px;
+    padding: 25px;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.cart {
+    display: flex;
+    height: 140px;
+}
+
+img {
+    margin: 1%;
+    width: 120px;
+    height: 120px;
+}
+
+.info {
+    margin-left: 2%;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.net-wt {
+    margin-top: 2px;
+    font-size: 13px;
+    color: gray;
+}
+
+.price {
+    display: flex;
+    font-size: 14px;
+    color: gray;
+    width: 180px;
+}
+
+.price .rupee-logo {
+    font-size: 12px;
+}
+
+.total-price {
+    color: gray;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.total-price .rupee-logo {
+    font-size: 12px;
+}
+
+.flex {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.underline {
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+.discount,
+.discount-price {
+    font-weight: bold;
+    color: green;
+    margin-right: 10px;
+}
+
+
+input {
+    width: 20px;
+    text-align: center;
+    border: none;
+}
+
+.inc-dec button {
+    font-weight: bolder;
+    background-color: black;
+    color: white;
+    border: none;
+    height: 22px;
+    width: 22px;
+}
+
+.center {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.center img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+    height: 200px;
+    width: 350px;
+    margin: 20px 0px;
+
+}
+
+.center p {
+    font-size: 18px;
+    margin-top: -10px;
+}
+
+.my-cart {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: -10px;
+}
+
+.btn {
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(36, 163, 222);
+    border: none;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btn-2 {
+    width: 45px;
+    height: 30px;
+    background-color: rgb(249, 67, 67);
+    color: white;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin-right: 60px;
+}
+
+.summary {
+    margin-right: 2%;
+    width: 250px;
+    height: 210px;
+    margin-top: 20px;
+    font-size: 13px;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.summary h2 {
+    text-align: center;
+    margin-top: 2px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    font-weight: 500;
+    color: rgb(36, 163, 222);
+}
+
+.summary-div {
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.span {
+    height: 30px;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.checkout {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.checkout button {
+    width: 300px;
+    cursor: pointer;
+    height: 40px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.free {
+    font-size: 12px;
+}
+
+
+.user {
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.total {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.total-rupee {
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.free {
+    color: green;
+    font-weight: 700;
+}
+
+@media(max-width:900px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        width: 80%;
+    }
+
+    .btn-2 {
+        margin-right: 20px;
+        width: 30px;
+        height: 25px;
+    }
+
+    .price-flex {
+        display: block;
+    }
+
+    .inc-dec {
+        margin-top: 5%;
+    }
+    .center img{
+        width: 240px;
+        height: 140px;
+    }
+    .center{
+        height: 60%;
+    }
+    .center button{
+        width: 100px;
+        height: 30px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+}
+
+
+@media(max-width:550px) {
+    .container {
+        margin-top: 2px;
+    }
+
+    .box {
+        width: 95%;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart {
+        height: 130px;
+    }
+
+    .name {
+        font-size: 13px;
+        margin: 2px;
+
+    }
+
+    .info {
+        margin-left: 2%;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .flex {
+        margin-top: 0;
+    }
+
+    .net-wt {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+    .inc-dec button {
+        width: 16px;
+        height: 16px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .price {
+        font-size: 12px;
+    }
+
+    .total-price {
+        font-size: 12px;
+        margin-left: -40px;
+    }
+
+    .btn-2 {
+        width: 25px;
+        height: 25px;
+    }
+
+    .summary {
+        margin-left: 10px;
+        font-size: 12px;
+        height: 190px;
+        width: 80%;
+    }
+
+    .summary-div {
+        margin-bottom: 4px;
+    }
+
+    .summary span {
+        height: 20px;
+    }
+
+    .checkout {
+        margin-top: 20px;
+    }
+    .center img{
+        width: 240px;
+        height: 140px;
+    }
+    .center{
+        height: 60%;
+    }
+    .center button{
+        width: 100px;
+        height: 30px;
+        font-size: 13px;
+        font-weight: 700;
+    }
+    
+}

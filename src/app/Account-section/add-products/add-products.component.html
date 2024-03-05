@@ -1,0 +1,77 @@
+<div class="form">
+    <div class="login">
+        <form [formGroup]="addproductForm">
+            <div class="add-products">
+                <p class="heading">Add New Product</p>
+                <div class="input">
+                    <input formControlName="productName" type="text" placeholder=" Name of Product">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productName') && addproductForm.controls['productName'].dirty"
+                        class="required">*Please Enter the Name of Product</span><br>
+                </div>
+
+                <div class="input">
+                    <input formControlName="productBrand" type="text" placeholder=" Brand of Product">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productBrand') && addproductForm.controls['productBrand'].dirty"
+                        class="required">*Please Enter the Brand of Product </span><br>
+                </div>
+
+                <div class="input">
+                    <input formControlName="productWeight" type="text" placeholder=" Net Weight of Product ">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productWeight') && addproductForm.controls['productWeight'].dirty"
+                        class="required">*Please Enter the Net Weight of Product </span><br>
+                </div>
+                <div class="input">
+                    <input formControlName="productCost" type="text" placeholder=" Cost of Product">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productCost') && addproductForm.controls['productCost'].dirty"
+                        class="required">*Please Enter the Price of Product</span><br>
+                </div>
+                <div class="input">
+                    <input formControlName="productDiscount" type="text" placeholder=" Discount on Product Cost">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productDiscount') && addproductForm.controls['productDiscount'].dirty"
+                        class="required">*Please Enter the Price of Product</span><br>
+                </div>
+                <div class="input">
+                    <select formControlName="productCategory"  (change)="onSelect($event)">
+                        <option value="" disabled selected>Select Category</option>
+                        <option *ngFor="let item of category" value="{{item.category}}">{{item.category}}</option>
+                    </select>
+                    <span
+                        *ngIf="addproductForm.hasError('required','productCategory') && addproductForm.controls['productCategory'].dirty"
+                        class="required">*Please Select the Category of Product</span><br>
+                </div>
+
+                <div class="input">
+                    <select formControlName="productType">
+                        <option value="" disabled selected>Select Type</option>
+                        <option *ngFor="let item of type">{{item.type}}</option>
+                    </select>
+                    <span
+                        *ngIf="addproductForm.hasError('required','productType') && addproductForm.controls['productType'].dirty"
+                        class="required">*Please Select the Type of Product</span><br>
+                </div>
+
+                <div class="input">
+                    <input formControlName="productDescription" type="text" placeholder=" Description of product">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productDescription') && addproductForm.controls['productDescription'].dirty"
+                        class="required">*Please Enter the Description of Product</span><br>
+                </div>
+                <div class="input">
+                    <input formControlName="productImage" type="text" placeholder=" Image Link of product">
+                    <span
+                        *ngIf="addproductForm.hasError('required','productImage') && addproductForm.controls['productImage'].dirty"
+                        class="required">*Please Enter the Link of Product Image</span><br>
+                </div>
+
+                <button [disabled]="addproductForm.invalid" [class.disabled]="addproductForm.invalid"
+                    (click)="addproduct()">Add Product</button>
+
+            </div>
+        </form>
+    </div>
+</div>

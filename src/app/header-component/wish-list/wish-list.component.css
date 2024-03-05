@@ -1,0 +1,165 @@
+.container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    margin: 20px 3% 20px 3%;
+    gap: 10px;
+}
+
+.box-1 {
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 1070px;
+    height: 600px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.box-2 {
+    margin-left: 50px;
+}
+
+.main {
+    width: 92%;
+    padding-top: 2%;
+}
+
+.h2 {
+    margin-top: 20px;
+}
+
+.flex {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(225, 225, 225);
+    height: 140px;
+}
+
+.date {
+    margin-top: 20px;
+    color: rgb(36, 163, 222);
+}
+
+.img {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+}
+
+.name {
+    margin-top: 20px;
+    width: 250px;
+    line-height: 1.2;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.weight {
+    font-size: 12px;
+    color: rgb(131, 131, 131);
+}
+
+.cost {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.process {
+    margin-left: 40px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: green;
+}
+
+.btn {
+    width: 80px;
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-1 {
+    background-color: rgb(214, 214, 214);
+    width: 30px;
+    font-weight: bold;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+}
+
+.button-2 {
+    background-color: rgb(214, 214, 214);
+    width: 30px;
+    font-weight: bold;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+}
+
+.costPrice p {
+    margin-left: 15px;
+}
+
+.costPrice {
+    width: 400px
+}
+
+.discountPrice {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(35, 190, 228);
+}
+
+.productCost {
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    text-decoration: line-through 1px solid gray;
+}
+
+
+.discount {
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+}
+
+.no-order img {
+    width: 370px;
+    height: 230px;
+}
+
+.no-order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-3 {
+    text-align: center;
+    padding-top: 50px;
+    
+}
+
+.box-3-text {
+    margin-top: 20px;
+}
+
+.box-3-text p {
+    font-size: 18px;
+}
+
+.box-3-text button {
+    margin-top: 30px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgb(36, 163, 222);
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}

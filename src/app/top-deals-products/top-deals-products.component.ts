@@ -1,0 +1,35 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { GetAllProductsService } from '../services/get-all-products.service';
+import { ActivatedRoute } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
+
+
+@Component({
+  selector: 'app-top-deals-products',
+  standalone: true,
+  imports: [CommonModule,FontAwesomeModule],
+  templateUrl: './top-deals-products.component.html',
+  styleUrl: './top-deals-products.component.css'
+})
+export class TopDealsProductsComponent {
+
+  faIndianRupeeSign=faIndianRupeeSign
+  productList:any
+  constructor(private getallproducts:GetAllProductsService , private activatedroute:ActivatedRoute){}
+
+  ngOnInit(){
+    let productType= this.activatedroute.snapshot.paramMap.get('key')
+    productType && this.getallproducts.getProductsByType(productType).subscribe((res)=>{
+      this.productList=res
+    })
+
+    let productBrand=this.activatedroute.snapshot.paramMap.get('brand')
+    productBrand && this.getallproducts.getProductsByBrand(productBrand).subscribe((res)=>{
+      this.productList=res
+      console.log(res)
+    })
+  }
+
+}

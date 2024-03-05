@@ -1,0 +1,94 @@
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+}
+
+.quote {
+    width: 50%;
+    font-size: 17px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.flex {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.box{
+    width:400px;
+    display: flex;
+    margin: 20px 20px;
+}
+
+
+h2 {
+    width: 300px;
+}
+.bold{
+    font-size: 18px;
+    font-weight: 700;
+}
+.medal{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.fd{
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+.cs{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+@media(max-width:600px){
+    .quote{
+        margin-top: 0;
+        width: 70%;
+        font-size: 15px;
+    }
+    .flex{
+        margin-top:10px ;
+    }
+    .box{
+        margin: 0;
+    }
+    .medal{
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+    .fd{
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+    
+    .cs{
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+    .bold{
+        font-size: 15px;
+        font-weight: 700;
+    }
+    p{
+        font-size: 14px;
+        
+    }
+}
