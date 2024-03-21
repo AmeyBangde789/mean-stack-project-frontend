@@ -1,0 +1,27 @@
+{
+  "routes": [
+    "/",
+    "/accessories",
+    "/accounts",
+    "/add-products",
+    "/address",
+    "/address-info",
+    "/admin-accounts",
+    "/admin-login",
+    "/admin-profile",
+    "/benches_racks_and_grips",
+    "/best-seller",
+    "/cardio",
+    "/cart",
+    "/forget-password",
+    "/login",
+    "/machines",
+    "/my-orders",
+    "/product-list",
+    "/profile-info",
+    "/registration",
+    "/supplements",
+    "/weights_and_barbells",
+    "/wishlist"
+  ]
+}

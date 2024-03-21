@@ -38,8 +38,8 @@ export class LoginComponent {
       .subscribe({
         next: (res) => {
           alert("Login Successfully!");
+          
           localStorage.setItem('user_id', JSON.stringify(res.data));
-
           this.router.navigate(['']);
           this.loginForm.reset();
           this.localCartToRemoteCart()
