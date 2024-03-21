@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { product } from '../data-type';
+import { apiProducts } from '../validators/api.products';
 
 @Injectable({
   providedIn: 'root'
@@ -12,37 +13,43 @@ export class GetAllProductsService {
   constructor() { }
 
   getAllproducts() {
-    return this.http.get<any[]>('http://localhost:8800/api/route/')
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/`)
       .pipe(map((res: any) => {
         return res;
       }))
   }
 
   getById(productId: string) {
-    return this.http.get<any[]>(`http://localhost:8800/api/route/${productId}`)
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/${productId}`)
   }
 
   updateProduct(productId: string, data: product) {
-    return this.http.put(`http://localhost:8800/api/route/update/${productId}`, data)
+    return this.http.put(`${apiProducts.productApiService}route/update/${productId}`, data)
   }
 
   deleteProduct(productId: string) {
-    return this.http.delete<any>(`http://localhost:8800/api/route/delete/${productId}`)
+    return this.http.delete<any>(`${apiProducts.productApiService}route/delete/${productId}`)
 
   }
 
-  getDiscountProducts() {
-    return this.http.get<any[]>('http://localhost:8800/api/route/discount')
+  getSuppDiscount(key:string) {
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/suppdiscount/${key}`)
+  }
+  getsuppTypeDiscount(key:string){
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/supptypediscount/${key}`)
+  }
+  getaccTypeDiscount(key:string){
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/acctypediscount/${key}`)
   }
 
   getRelatedProducts(type:string,id:string){
-    return this.http.get<any[]>(`http://localhost:8800/api/route/relatedproducts/${type}/${id}`)
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/relatedproducts/${type}/${id}`)
   }
   getProductsByType(type:string){
-    return this.http.get<any[]>(`http://localhost:8800/api/route/productsbytype/${type}`)
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/productsbytype/${type}`)
   }
   getProductsByBrand(brand:string){
-    return this.http.get<any[]>(`http://localhost:8800/api/route/getbybrands/${brand}`)
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/getbybrands/${brand}`)
   }
 
   categories() {
@@ -53,7 +60,6 @@ export class GetAllProductsService {
       { category: "Benches, Racks and Grips" },
       { category: "Accessories" },
       { category: "Supplements" },
-      { category: "Clothing" }
     ]
   }
 
@@ -74,6 +80,7 @@ export class GetAllProductsService {
       { category: "Cardio", type: "Rowing Machines" },
       { category: "Cardio", type: "Ladder Step Machines" },
       { category: "Cardio", type: "Elliptical Trainers" },
+      { category: "Cardio", type: "ARC Trainers" },
 
       { category: "Benches, Racks and Grips", type: "Benches" },
       { category: "Benches, Racks and Grips", type: "Racks" },
@@ -81,24 +88,18 @@ export class GetAllProductsService {
 
       { category: "Accessories", type: "Gloves and Wrist Straps" },
       { category: "Accessories", type: "Weightlifting Belts" },
-      { category: "Accessories", type: "Resistance Bands and Skipping Ropes" },
+      { category: "Accessories", type: "Resistance Bands and Sling Trainer" },
       { category: "Accessories", type: "Gym Bags and Sacks" },
-      { category: "Accessories", type: "Exercise Mats and Sling Trainer" },
+      { category: "Accessories", type: "Exercise Mats" },
       { category: "Accessories", type: "Medicine Balls and Stability Balls" },
 
       { category: "Supplements", type: "Protine" },
       { category: "Supplements", type: "Weight Gainer" },
       { category: "Supplements", type: "Creatine" },
-      { category: "Supplements", type: "Pre-Wokout" },
+      { category: "Supplements", type: "Pre-Workout" },
       { category: "Supplements", type: "BCAA" },
       { category: "Supplements", type: "Multi Vitamins and other supplements " },
 
-      { category: "Clothing", type: "Shorts and Trunks" },
-      { category: "Clothing", type: "Tshirts and Vests" },
-      { category: "Clothing", type: "Joggers and Trackpants" },
-      { category: "Clothing", type: "Compressions" },
-      { category: "Clothing", type: "Sweatshirts and Sweatpants" },
-      { category: "Clothing", type: "Jackets and Hoodies" },
     ]
 
   }

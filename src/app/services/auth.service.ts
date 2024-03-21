@@ -14,30 +14,30 @@ export class AuthService {
 
 
   registerService(registerObj: any) {
-    return this.http.post<any>(`${apiUrls.authServiceApi}registration`, registerObj);
+    return this.http.post<any>(`${apiUrls.authServiceApi}auth/registration`, registerObj);
   }
 
   loginService(loginObj: User) {
-    return this.http.post<any>(`${apiUrls.authServiceApi}login`, loginObj, { withCredentials: true });
+    return this.http.post<any>(`${apiUrls.authServiceApi}auth/login`, loginObj, { withCredentials: true });
   }
 
   getUser(): Observable<any> {
     let userStore = localStorage.getItem('user_id');
     let userData = userStore && JSON.parse(userStore);
     let userId = userData._id
-    return this.http.get<any>(`http://localhost:8000/api/role/getOne/${userId}`);
+    return this.http.get<any>(`${apiUrls.authServiceApi}role/getOne/${userId}`);
   }
   getAdmin(): Observable<any> {
     let userStore = localStorage.getItem('Admin_id');
     let userData = userStore && JSON.parse(userStore);
     let userId = userData._id
-    return this.http.get<any>(`http://localhost:8000/api/role/getOne/${userId}`);
+    return this.http.get<any>(`${apiUrls.authServiceApi}role/getOne/${userId}`);
   }
   updateUser(userId:string,data:any){
-    return this.http.put<any>(`http://localhost:8000/api/role/updateUser/${userId}`, data);
+    return this.http.put<any>(`${apiUrls.authServiceApi}role/updateUser/${userId}`, data);
   }
   adminLoginService(loginObj: User) {
-    return this.http.post<any>(`${apiUrls.authServiceApi}admin-login`, loginObj, { withCredentials: true });
+    return this.http.post<any>(`${apiUrls.authServiceApi}auth/admin-login`, loginObj, { withCredentials: true });
   }
 
   addproductService(addproductObj: any) {
@@ -45,11 +45,11 @@ export class AuthService {
   }
 
   sendEmailService(email: string) {
-    return this.http.post<any>(`${apiUrls.authServiceApi}send-email`, { email: email });
+    return this.http.post<any>(`${apiUrls.authServiceApi}auth/send-email`, { email: email });
 
   }
   resetPasswordService(resetObj: any) {
-    return this.http.post<any>(`${apiUrls.authServiceApi}reset-password`, resetObj);
+    return this.http.post<any>(`${apiUrls.authServiceApi}auth/reset-password`, resetObj);
 
   }
 

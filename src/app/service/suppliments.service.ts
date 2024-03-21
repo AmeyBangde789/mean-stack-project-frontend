@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators'
+import { apiProducts } from '../validators/api.products';
 
 
 
@@ -12,7 +13,7 @@ import {map} from 'rxjs/operators'
     constructor(private http: HttpClient) {}
 
     getProduct(){
-      return this.http.get<any>("http://localhost:8800/api/route/suppliments")
+      return this.http.get<any>(`${apiProducts.productApiService}route/supplements`)
       .pipe(map((res:any)=>{
         return res;
       }))

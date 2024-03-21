@@ -10,7 +10,7 @@ export class SearchedProductService {
 
   constructor(private http: HttpClient) { }
   getProduct(key:any){
-    return this.http.get<any>(`${apisearchProduct.searchProductServiceApi}${key}`)
+    return this.http.get<any>(`${apisearchProduct.searchProductServiceApi}products/${key}`)
     .pipe(map((res:any)=>{
       return res;
     }))

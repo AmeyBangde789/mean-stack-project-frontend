@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { cart, product, wishList } from '../data-type';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { apiCart } from '../validators/api.cart';
 @Injectable({
   providedIn: 'root'
 })
@@ -35,23 +36,22 @@ export class CartService {
     }
   }
   addToCart(cartData: cart) {
-    return this.http.post('http://localhost:8700/api/addtocart', cartData)
+    return this.http.post(`${apiCart.cartApiService}addtocart`, cartData)
   }
 
   getCartList(userId: string) {
-    return this.http.get<product[]>('http://localhost:8700/api/userid/' + userId,
+    return this.http.get<product[]>(`${apiCart.cartApiService}userid/` + userId,
       { observe: 'response' }).subscribe((result) => {
 
         console.log(result);
         if (result && result.body) {
           this.cartData.emit(result.body);
         }
-
       })
   }
 
   removeToCart(cartId: string) {
-    return this.http.delete(`http://localhost:8700/api/deleteid/${cartId}`)
+    return this.http.delete(`${apiCart.cartApiService}deleteid/${cartId}`)
   }
 
 
@@ -61,7 +61,7 @@ export class CartService {
 
     if (userData && userData._id) {
       let userId = userData._id;
-      return this.http.get<cart[]>(`http://localhost:8700/api/userid/${userId}`);
+      return this.http.get<cart[]>(`${apiCart.cartApiService}userid/${userId}`);
     } else {
       // Handle the case where userData or userData._id is not available
       return new Observable<cart[]>(); // or return null, throw an error, etc.
@@ -69,15 +69,15 @@ export class CartService {
   }
 
   incrementQuantity(itemId: string): Observable<cart> {
-    return this.http.put<cart>(`http://localhost:8700/api/increment/${itemId}`, {});
+    return this.http.put<cart>(`${apiCart.cartApiService}increment/${itemId}`, {});
   }
 
   decrementQuantity(itemId: string): Observable<cart> {
-    return this.http.put<cart>(`http://localhost:8700/api/decrement/${itemId}`, {});
+    return this.http.put<cart>(`${apiCart.cartApiService}decrement/${itemId}`, {});
   }
 
   deleteAllcart(userId: string) {
-    return this.http.delete<any>(`http://localhost:8700/api/deleteallcart/${userId}`)
+    return this.http.delete<any>(`${apiCart.cartApiService}deleteallcart/${userId}`)
   }
 
 }

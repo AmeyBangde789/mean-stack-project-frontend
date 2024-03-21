@@ -1,6 +1,11 @@
-.container{
+.container {
     display: flex;
-    justify-content: center;
+    overflow-x: auto;
+    margin: 20px 20px 20px 3%;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 p{
     font-size: 18px;

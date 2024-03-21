@@ -1,7 +1,7 @@
 .box p {
     margin-top: 20px;
     margin-left: 50px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 
@@ -14,11 +14,29 @@
 
 .btn {
     margin-top: 20px;
-    width: 210px;
-    height: 50px;
+    width: 160px;
+    height: 40px;
     border: none;
-    background-color: rgb(255, 106, 0);
+    border-radius: 7px;
+    background-color: rgb(45, 159, 64);
     color: white;
     font-weight: 600;
     margin-right: 35px;
+}
+@media(max-width:450px){
+    .box p{
+        margin-left: 25px;
+        font-size: 14px;
+    }
+    .box-2{
+        padding:15px 10px 15px 25px ;
+        font-size: 14px;
+    }
+    .btn{
+        width: 130px;
+        height: 35px;
+        font-size: 12px;
+        margin-left: 25px;
+    }
+
 }

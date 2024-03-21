@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { cart, wishList } from '../data-type';
 import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { apiCart } from '../validators/api.cart';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class WishlistService {
   constructor() { }
 
   addTowishList(wishListData:wishList){
-    return this.http.post('http://localhost:8700/api/addtowishlist',wishListData)
+    return this.http.post(`${apiCart.cartApiService}addtowishlist`,wishListData)
   }
 
   getwishListProduct():Observable<wishList[]>{
@@ -21,7 +22,7 @@ export class WishlistService {
 
     if (userData && userData._id) {
       let userId = userData._id;
-      return this.http.get<wishList[]>(`http://localhost:8700/api/wishlistbyuserid/${userId}`);
+      return this.http.get<wishList[]>(`${apiCart.cartApiService}wishlistbyuserid/${userId}`);
     } 
     else{
       return new Observable<wishList[]>();
@@ -29,11 +30,11 @@ export class WishlistService {
   }
 
   getbyuserIdandproductId(productId:string,userId:string){
-    return this.http.get<wishList[]>(`http://localhost:8700/api/userid/${productId}/${userId}`)
+    return this.http.get<wishList[]>(`${apiCart.cartApiService}userid/${productId}/${userId}`)
   }
 
   deleteWishlistProduct(productId:string,userId:string){
-    return this.http.delete<cart[]>(`http://localhost:8700/api/wishlistProductdelete/${productId}/${userId}`)
+    return this.http.delete<cart[]>(`${apiCart.cartApiService}wishlistProductdelete/${productId}/${userId}`)
   }
 }
 

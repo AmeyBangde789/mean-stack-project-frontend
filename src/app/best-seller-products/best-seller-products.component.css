@@ -1,11 +1,12 @@
 .container {
     max-width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 .card {
     width: 280px;
@@ -25,7 +26,6 @@
 }
 
 .image img{
-    border: 1px solid rgb(223, 223, 223);
     width: 95%;
     height: 95%
 }
@@ -51,7 +51,7 @@
 }
 
 .flex p{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -146,14 +146,15 @@
 
 @media(max-width:500px){
     .card {
-        width: 175px;
-        height: 250px;
+        width: 155px;
+        height: 220px;
         padding: 5px;
         margin: 5px;
         border: 1px solid rgb(223, 223, 223);
         box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
     }
+
     .flex p{
         font-size: 12px;
         font-weight: 700;
@@ -179,5 +180,8 @@
     .info {
         height: 30%;
         padding: 3.5%;
+    }
+    .price{
+        margin-top: -8px;
     }
 }

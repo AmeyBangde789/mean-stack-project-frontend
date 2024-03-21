@@ -1,5 +1,6 @@
 <div class="container">
-    <app-accounts></app-accounts>
+    <div class="box-1">
+        <app-accounts></app-accounts></div>
     <div class="box-2">
         <div>
             <p>Profile Information <fa-icon [icon]="edit" class="icons edit" (click)="change()"
@@ -34,7 +35,7 @@
 
                         <div class="gender">
                             <span>GENDER</span>
-                            <div>
+                            <div class="gender-div">
                                 <input type="radio" class="radio" ngModel="{{user.gender}}" formControlName="gender"
                                     value="Male">Male
                                 <input type="radio" class="radio" ngModel="{{user.gender}}" formControlName="gender"

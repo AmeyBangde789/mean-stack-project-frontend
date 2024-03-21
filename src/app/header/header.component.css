@@ -23,23 +23,24 @@
 }
 
 .items {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     background-color: rgb(77, 77, 77);
     height: 40px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
 }
 
 .items a {
-    margin-left: 4%;
     text-decoration: none;
     color: white;
 
 }
 
 .items a:hover {
-    border-bottom: 2px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
     padding-bottom: 5px;
 }
 
@@ -154,10 +155,17 @@ input:focus {
 .sideBar {
     display: none;
 }
+@media(max-width:1100px){
+ .items a{
+    font-size: 10px;
+    margin-left: 3.5%;
+ }   
+}
 
 @media(max-width:850px) {
     .sideBar {
         display: block;
+
     }
 
     .badge {
@@ -193,6 +201,7 @@ input:focus {
         font-size: 16px;
         margin-left: 25px;
     }
+
     .search-box {
         position: absolute;
         width: 100%;
@@ -248,7 +257,8 @@ input:focus {
         display: flex;
         align-items: center;
     }
-    .cross{
+
+    .cross {
         font-size: 16px;
     }
 
@@ -265,21 +275,22 @@ input:focus {
         margin-left: 20px;
     }
 
-    .sideBar-items{
+    .sideBar-items {
         position: fixed;
         z-index: 999;
-        top: 20;
+        top: 0;
         left: 0;
         font-size: 12px;
         background-color: rgb(77, 77, 77);
         display: flex;
+        align-items: center;
         flex-direction: column;
         width: 50%;
-        height: 60vh;
+        height: 100%;
     }
 
     .sideBar-items a {
-        margin: 0 0 30px 20px;
+        margin-top: 20px;
         text-decoration: none;
         color: rgb(255, 255, 255);
 
@@ -289,13 +300,13 @@ input:focus {
         margin-top: 30px;
     }
 
-    .sideBar .user-icons{
+    .sideBar .user-icons {
         width: 15%;
-        display:flex;
+        display: flex;
         align-items: center;
     }
 
-    .sideBar .icons{
+    .sideBar .icons {
         font-size: 16px;
     }
 
@@ -303,7 +314,8 @@ input:focus {
         display: none;
     }
 }
-@media(max-width:450px){
+
+@media(max-width:450px) {
     .badge {
         background-color: rgb(253, 56, 56);
         color: #fff;
@@ -320,11 +332,12 @@ input:focus {
         top: 2%;
     }
 
-    .sideBar .user-icons{
+    .sideBar .user-icons {
         width: 20%;
-        display:flex;
+        display: flex;
         align-items: center;
     }
+
     .search-result {
         position: absolute;
         display: list-item;
@@ -335,7 +348,8 @@ input:focus {
         left: 5%;
         list-style-type: none;
     }
-    .sideBar-items{
+
+    .sideBar-items {
         position: fixed;
         z-index: 999;
         top: 20;
@@ -345,7 +359,7 @@ input:focus {
         display: flex;
         flex-direction: column;
         width: 60%;
-        height: 60vh;
+        height: 100%;
     }
 
 }

@@ -37,7 +37,7 @@ export class AdminAccountsComponent {
 
   adminStore = localStorage.getItem('Admin_id');
   adminData = this.adminStore && JSON.parse(this.adminStore);
-  adminName = this.adminData.firstName
+  adminName = this.adminData ?.firstName
 
 
 

@@ -1,6 +1,6 @@
 <div class="container">
     <ng-container *ngFor="let item of productList">
-        <div class="card" >
+        <div class="card" routerLink="/details/{{item._id}}/{{item.productType}}">
             <div class="image">
                 <span class="badge" *ngIf="item.productDiscount>0 ">
                     <p class="discount">{{item.productDiscount}}% OFF</p>

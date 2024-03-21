@@ -1,9 +1,15 @@
 .flex-box {
     display: flex;
-    justify-content: space-between;
+    overflow-x: auto;
+    margin-bottom: 30px;
 }
-.flex-box2{
-   margin-left: 150px;
+.flex-box::-webkit-scrollbar {
+    display: none;
+}
+
+.flex-box2 {
+    margin-left: 7%;
+    width: 100%;
 }
 
 .box {
@@ -11,7 +17,7 @@
     background-color: rgb(255, 255, 255);
     justify-content: space-between;
     width: 875px;
-    height: 115px;
+    min-height: 110px;
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -29,7 +35,7 @@
 .addressData {
     margin-top: 30px;
     width: 876px;
-    height: 90px;
+    min-height: 90px;
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
     display: flex;
@@ -59,25 +65,25 @@
     margin-left: 55px;
     margin-top: 15px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .addressData-p2 {
     margin-left: 55px;
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .addressData-span {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .p3 {
-    margin-left: 55px;
-    margin-top: 20px;
+    margin-left: 40px;
+    margin-top: 10px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .box-2 {
@@ -87,11 +93,12 @@
 
 .deliver {
     margin-top: 20px;
-    background-color: rgb(255, 106, 0);
+    background-color:rgb(45, 159, 64);
     color: white;
-    height: 50px;
-    width: 200px;
+    height: 40px;
+    width: 160px;
     border: none;
+    border-radius: 7px;
     font-size: 14px;
     font-weight: 600;
 }
@@ -142,12 +149,12 @@
 }
 
 .name {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
 .phone {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -158,7 +165,7 @@
     text-align: center;
     background-color: rgb(207, 207, 207);
     color: rgb(104, 104, 104);
-    font-size: 14px;
+    font-size: 13px;
     margin-left: 10px;
     margin-right: 10px;
     font-weight: 600;
@@ -166,17 +173,17 @@
 
 .pincode {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .address {
     margin-top: 15px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .address-1 {
     margin-top: 5px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .head {
@@ -203,6 +210,10 @@
 }
 
 .radio-btn2 p {
+    font-size: 12px;
+}
+.radio-btn2-div{
+    display: flex;
     font-size: 12px;
 }
 
@@ -246,10 +257,11 @@ select {
 .btn {
     margin-top: 40px;
     margin-left: 70px;
-    width: 210px;
-    height: 50px;
+    width: 160px;
+    height: 40px;
     border: none;
-    background-color: rgb(255, 106, 0);
+    border-radius: 7px;
+    background-color: rgb(45, 159, 64);
     color: white;
     font-weight: 600;
     margin-right: 35px;
@@ -257,19 +269,18 @@ select {
 
 .span {
     font-size: 12px;
-    height: 30px;
-
+    height: 10px
 }
 
 .span-1 {
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
 }
 
 
 .summary {
-    width: 320px;
-    height: 210px;
+    width: 250px;
+    height: 180px;
     margin-top: 30px;
     margin-right: 120px;
     border: 1px solid rgb(223, 223, 223);
@@ -308,10 +319,6 @@ select {
 
 }
 
-.free {
-    font-size: 12px;
-}
-
 .discount {
     height: 30px;
     border-bottom: 1px solid rgb(212, 212, 212);
@@ -322,13 +329,8 @@ select {
     height: 180px;
 }
 
-.rupee {
-    font-size: 12px;
-    color: rgb(65, 65, 65);
-}
-
 .total {
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -342,6 +344,7 @@ select {
 .free {
     color: green;
     font-weight: 700;
+    font-size: 12px;
 }
 
 .payments {
@@ -351,4 +354,129 @@ select {
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
+}
+
+@media(max-width:450px) {
+    .flex-box{
+        display: block;
+    }
+    .flex-box2{
+        margin: 0;   
+    }
+    .box{
+        width: 100%;
+        box-shadow: none;
+    }
+    .addressData-p{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .addressData-p2{
+        min-height: 70px;
+        margin-top: 5px;
+
+    }
+    .addressData-button{
+        width: 65px;
+        height: 20px;
+        font-size: 10px;
+    }
+    .h1{
+        width: 100%;
+        margin-top: 0;
+    }
+    .radio{
+        margin-right: 8px;
+        margin-left: 5px;
+    }
+    .addressData{
+        width: 100%;
+    }
+    .address,.address-1{
+        font-size: 12px;
+        margin-left: 25px;
+    }
+    .box-2{
+        width: 100%;
+        margin: 10px;
+    }
+    .deliver{
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        margin-left: 25px;
+    }
+    form{
+        width: 100%;
+    }
+    .flex{
+        width: 97%;
+        margin-left: 2%;
+    }
+    .input {
+        width: 85%;
+    }
+    .flex input{
+        width: 85%;
+    }
+
+    select {
+        width: 88%;
+        margin-right: 28px;
+    }
+    .radio-btn{
+        margin-left: 10px;
+    }
+    .radio-btn2 {
+        margin-left: 10px;
+    }
+    .radio-btn2 p{
+        font-size: 13px;
+        margin-left: 5px;
+    }
+    .radio-btn2 input {
+        margin-right: 5px;
+        width: 10px;
+        margin-left: 5px;
+    }
+
+    .radio-btn2-div {
+        display: block;
+        font-size: 13px;
+    }
+    .box-3{
+        width: 100%;
+        font-size: 13px;
+    }
+    .btn{
+        width: 100px;
+        height: 30px;
+        font-size: 12px;
+        margin-left: 15px;
+        margin-right: 17px;
+    }
+    .span-1{
+        font-size: 12px;
+        margin-left:0;
+    }
+    .p3{
+        margin-left: 35px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .head h3{
+        margin-left: 10px;
+        font-size: 13px;
+    }
+    .payments{
+        width: 100%;
+
+    }
+    .summary-box{
+        display: flex;
+        justify-content: center;
+    }
+    .summary{
+        margin-right: 0;
+    }
 }

@@ -11,11 +11,11 @@ export class SearchProductService {
 
   constructor() { }
   searchProduct(key:string){
-    return this.http.get<any[]>(`${apisearchProduct.searchProductServiceApi}${key}`)
+    return this.http.get<any[]>(`${apisearchProduct.searchProductServiceApi}products/${key}`)
   }
 
   searchproductbyid(id:string){
-    return this.http.get<any[]>(`${apisearchProduct.searchproductbyid}${id}`)
+    return this.http.get<any[]>(`${apisearchProduct.searchProductServiceApi}${id}`)
   }
 }
 

@@ -1,5 +1,12 @@
+.main{
+    border-bottom: 12px solid rgb(239, 239, 239);
+    border-top: 6px solid rgb(239, 239, 239);
+}
+.container{
+    padding: 20px;
+}
 .heading {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
     margin-top: 40px;
@@ -12,8 +19,8 @@
 }
 
 .quote {
-    width: 50%;
-    font-size: 17px;
+    width: 45%;
+    font-size: 15px;
     text-align: left;
     margin-top: 20px;
 }
@@ -34,24 +41,27 @@
 h2 {
     width: 300px;
 }
+p{
+    font-size: 14px;
+}
 .bold{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 }
+
 .medal{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     margin-right: 10px;
 }
 .fd{
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
-}
-
-.cs{
     width: 50px;
     height: 50px;
+    margin-right: 20px;
+}
+.cs{
+    width: 40px;
+    height: 40px;
     margin-right: 20px;
 }
 
@@ -59,7 +69,7 @@ h2 {
     .quote{
         margin-top: 0;
         width: 70%;
-        font-size: 15px;
+        font-size: 13px;
     }
     .flex{
         margin-top:10px ;
@@ -83,12 +93,12 @@ h2 {
         height: 40px;
         margin-right: 20px;
     }
+    p{
+        font-size: 12px;
+    }
     .bold{
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 700;
     }
-    p{
-        font-size: 14px;
-        
-    }
+   
 }

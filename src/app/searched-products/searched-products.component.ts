@@ -8,26 +8,31 @@ import { SearchedProductService } from '../service/searched-product.service';
 @Component({
   selector: 'app-searched-products',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule,RouterModule],
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
   templateUrl: './searched-products.component.html',
   styleUrl: './searched-products.component.css'
 })
 export class SearchedProductsComponent {
-  public productList :any ;
-  faIndianRupeeSign=faIndianRupeeSign
-  noResult:any
+  public productList: any;
+  faIndianRupeeSign = faIndianRupeeSign
+  noResult: any
 
-  constructor(private SearchedProductService:SearchedProductService, private ActivatedRoute:ActivatedRoute){}
+  constructor(private SearchedProductService: SearchedProductService, private ActivatedRoute: ActivatedRoute) { }
 
-  ngOnInit(): void{
-    let key =this.ActivatedRoute.snapshot.paramMap.get('key')
-    this.SearchedProductService.getProduct(key)
-    .subscribe(res=>{
-      this.productList= res;
-      if(!res.length){
-        this.noResult=true
-      }
-      
+  ngOnInit(): void {
+    this.ActivatedRoute.params.subscribe(params => {
+      const key = params['key']
+      this.SearchedProductService.getProduct(key)
+        .subscribe(res => {
+          this.productList = res;
+          if (!res.length) {
+            this.noResult = true
+          }
+          else{
+            this.noResult=false
+          }
+
+        })
     })
   }
 }

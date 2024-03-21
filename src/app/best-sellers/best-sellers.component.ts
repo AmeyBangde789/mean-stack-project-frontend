@@ -4,30 +4,42 @@ import { OrderService } from '../services/order.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-best-sellers',
   standalone: true,
-  imports: [CommonModule, FontAwesomeModule , RouterModule],
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
   templateUrl: './best-sellers.component.html',
   styleUrl: './best-sellers.component.css'
 })
 export class BestSellersComponent {
-  faIndianRupeeSign = faIndianRupeeSign
   faChevronRight = faChevronRight
   faChevronLeft = faChevronLeft
   products: any
-  constructor(private orderService: OrderService) { }
+  selectedTagIndex: any
+  constructor(private orderService: OrderService, private router: Router) { }
+
 
   ngOnInit() {
-    return this.orderService.bestSellers().subscribe((res) => {
+    return this.orderService.bestSellers('Weights and Barbells').subscribe((res) => {
       this.products = res
-      this.products = this.products.slice(0, 5);
+      this.selectedTagIndex = 'Weights and Barbells'
+
+      this.products = this.products.slice(0, 6);
     })
 
   }
-
+  function(category: string) {
+    this.selectedTagIndex = category
+    return this.orderService.bestSellers(category).subscribe((res) => {
+      this.products = res
+      this.products = this.products.slice(0, 6);
+    })
+  }
+  viewAll() {
+    this.router.navigate(['best-seller'])
+    window.scrollTo({top:0, behavior:"auto"})
+  }
 }
 

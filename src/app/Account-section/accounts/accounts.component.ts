@@ -37,7 +37,7 @@ export class AccountsComponent {
 
   userStore = localStorage.getItem('user_id');
   userData = this.userStore && JSON.parse(this.userStore);
-  userName = this.userData.firstName
+  userName = this.userData?.firstName
 
   profile(){
     this.router.navigate(['profile-info'])

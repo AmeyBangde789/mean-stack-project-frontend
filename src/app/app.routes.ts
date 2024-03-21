@@ -8,7 +8,6 @@ import { CardioComponent } from './header-component/cardio/cardio.component';
 import { MachinesComponent } from './header-component/machines/machines.component';
 import { AccessoriesComponent } from './header-component/accessories/accessories.component';
 import { SupplimentsComponent } from './header-component/suppliments/suppliments.component';
-import { ClothingComponent } from './header-component/clothing/clothing.component';
 import { ForgetPasswordComponent } from './user-auth/forget-password/forget-password.component';
 import { ResetComponent } from './user-auth/reset/reset.component';
 import { AccountsComponent } from './Account-section/accounts/accounts.component';
@@ -30,6 +29,8 @@ import { AdminProfileInfoComponent } from './Account-section/admin-profile-info/
 import { AddProductsComponent } from './Account-section/add-products/add-products.component';
 import { TopDealsComponent } from './top-deals/top-deals.component';
 import { TopDealsProductsComponent } from './top-deals-products/top-deals-products.component';
+import { BenchRacksGripsComponent } from './header-component/bench-racks-grips/bench-racks-grips.component';
+
 
 export const routes: Routes = [
     {
@@ -68,8 +69,13 @@ export const routes: Routes = [
         title: "Cart | FitEssentials Hub"
     },
     {
-        path: 'cardio_equipments',
+        path: 'cardio',
         component: CardioComponent,
+        title: "Cardio Equipments | FitEssentials Hub"
+    },
+    {
+        path: 'benches_racks_and_grips',
+        component:BenchRacksGripsComponent,
         title: "Cardio Equipments | FitEssentials Hub"
     },
     {
@@ -78,14 +84,9 @@ export const routes: Routes = [
         title: "Accessories | FitEssentials Hub"
     },
     {
-        path: 'suppliments',
+        path: 'supplements',
         component: SupplimentsComponent,
         title: "Suppliments | FitEssentials Hub"
-    },
-    {
-        path: 'clothing',
-        component: ClothingComponent,
-        title: "Clothing | FitEssentials Hub"
     },
     {
         path: 'forget-password',
@@ -179,10 +180,13 @@ export const routes: Routes = [
         title:"Top Deals | FitEssentials Hub"
     },
     {
-        path:"equipments/:brand",
+        path:"brand/:brand",
         component:TopDealsProductsComponent,
         title:"Top Deals | FitEssentials Hub"
     },
-  
-
+    {
+        path:"supp-top-deals/:category",
+        component:TopDealsProductsComponent,
+        title:"Top Deals | FitEssentials Hub"
+    },
 ];

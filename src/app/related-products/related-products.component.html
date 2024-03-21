@@ -1,7 +1,7 @@
 <div class="main" *ngIf=show>
     <p class="heading">You May Also Like</p>
     <div class="container">
-        <div class="card" *ngFor="let item of relatedProducts">
+        <div class="card" *ngFor="let item of relatedProducts"  (click)="select(item._id,item.productType)">
             <div class="image">
                 <span class="badge" *ngIf="item.productDiscount>0 ">
                     <p class="discount">{{item.productDiscount}}% OFF</p>

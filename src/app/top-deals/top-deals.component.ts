@@ -19,9 +19,4 @@ export class TopDealsComponent {
 
   constructor(private getAllproducts: GetAllProductsService) { }
 
-  ngOnInit() {
-    this.getAllproducts.getDiscountProducts().subscribe(res => {
-      this.products=res
-    })
-  }
 }

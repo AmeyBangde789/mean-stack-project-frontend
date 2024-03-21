@@ -34,8 +34,10 @@ export class AddProductsComponent implements OnInit {
       productCategory: ['', Validators.required],
       productType: ['', Validators.required],
       productDescription: ['', Validators.required],
+      productFeature: [''],
       productImage: ['', Validators.required],
     });
+
     this.category = this.getAllproducts.categories()
     console.log(this.category)
   }
@@ -51,7 +53,6 @@ export class AddProductsComponent implements OnInit {
           alert("Product Added");
           this.addproductForm.reset();
           this.router.navigate(['add-products'])
-
         },
         error: (err) => {
           console.log(err);

@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
 import { MachinesService } from '../../service/machines.service';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-machines',
   standalone: true,
-  imports: [CommonModule,FontAwesomeModule, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './machines.component.html',
   styleUrl: './machines.component.css'
 })
@@ -22,6 +20,4 @@ export class MachinesComponent {
         this.productList= res;
       })
     }
-
-    faIndianRupeeSign=faIndianRupeeSign
 }

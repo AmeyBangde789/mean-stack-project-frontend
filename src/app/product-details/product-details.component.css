@@ -1,36 +1,80 @@
 .main {
-    margin-top: 4%;
     overflow-x: auto;
     /* Enable horizontal scrolling */
-    margin: 20px 20px 20px 10px;
     gap: 10px;
+    background-color: #f2f2f2;
+    padding-bottom: 10%;
 }
 
 .product {
     display: flex;
+    justify-content: center;
+}
+
+.brand {
+    color: rgb(41, 146, 184);
+    margin-top: 20px;
+    font-size: 13px;
+    margin-bottom: 0
+}
+
+.brand:hover {
+    cursor: pointer;
+    color: rgb(57, 183, 228);
 }
 
 .heading {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 4%;
     line-height: 1.4;
+    border-bottom: 1px solid rgb(220, 220, 220);
+    padding-bottom: 10px;
 }
 
 .image {
-    width: 60%;
-    margin-right: 10%;
-    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28%;
+    min-width: 350px;
+    height: 400px;
+    margin-top: 4%;
+    margin-right: 20px;
+    background-color: white;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
-.product img {
-    width: 500px;
-    height: 500px;
+.product .img-1 {
+    width: 90%;
+    height: 90%;
+}
+
+.product .img-2 {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 
 }
+
 
 .details {
+    background-color: white;
+    justify-content: center;
+    display: flex;
     width: 40%;
+    margin-top: 4%;
+    padding-bottom: 4%;
+    border: 1px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.details-div {
+    width: 86%;
+    position: relative;
 }
 
 .span-1 {
@@ -51,20 +95,20 @@ input {
 .cost {
     display: flex;
     align-items: center;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     color: rgb(89, 196, 239);
 }
 
 .discountPrice {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     color: rgb(89, 196, 239);
 }
 
 .productCost {
     text-decoration: line-through;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     color: rgb(153, 153, 153);
     margin-left: 15px;
@@ -75,22 +119,23 @@ input {
 }
 
 .discount {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 700;
     margin-left: 10px;
     color: rgb(53, 155, 53);
 }
 
 .tax {
-    margin: 0;
+    margin-top: -10px;
     font-size: 10px;
     color: #7a7a7a;
 }
 
+
 .dot {
     position: relative;
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     background-color: rgb(42, 153, 40);
     border-radius: 50%;
     margin-right: 10px;
@@ -130,71 +175,70 @@ input {
 .stock {
     display: flex;
     align-items: center;
-}
-
-.stock {
     margin-top: 50px;
     margin-bottom: 15px;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 .btn-2 {
     margin-top: 40px;
-    width: 160px;
-    height: 50px;
-    font-size: 14px;
-    font-weight: 500;
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 700;
     color: white;
     border: none;
     border-radius: 6px;
-    background-color: #ff3737;
+    background-color: rebeccapurple;
     cursor: pointer;
 }
 
 .btn-3 {
     margin-top: 40px;
-    width: 160px;
-    height: 50px;
-    font-size: 14px;
+    width: 140px;
+    height: 40px;
+    font-size: 12px;
     font-weight: 500;
-    color: #ff3737;
-    border: 1px solid #ff3737;
+    color: rebeccapurple;
+    border: 1px solid rebeccapurple;
     border-radius: 6px;
     cursor: pointer;
     background-color: white;
 }
 
 .btn-2:hover {
-    background-color: #ff1818;
+    background-color:rgb(114, 68, 161);
 }
 
 .quantity {
+    width: 90px;
     display: flex;
+    justify-content: space-evenly;
     margin-right: 30px;
+    border: 0.5px solid rgb(189, 189, 189);
 }
 
-.quantity input {
-    color: black;
-    width: 24px;
-    height: 20px;
-    text-align: center;
-    font-weight: 700;
+.button {
+    display: flex;
 }
 
-.quantity button {
-    width: 24px;
-    height: 25px;
-    font-size: 18px;
-    font-weight: 500;
-    background-color: black;
-    border-radius: 4px;
-    color: white;
-    border: none;
+.btn-1 {
+    width: 24.5px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
     cursor: pointer;
 }
 
-.quantity button:hover {
-    background-color: #3e3e3e;
+.button input {
+    border-right: 0.5px solid rgb(189, 189, 189);
+    border-left: 0.5px solid rgb(189, 189, 189);
+    height: 27px;
+    width: 35px;
+    text-align: center;
+    font-weight: 700;
 }
 
 .span-2 {
@@ -206,7 +250,7 @@ input {
 
 .span-3 {
     font-size: 13px;
-    margin-left: 40px;
+    margin-left: 7px;
 }
 
 .icons {
@@ -226,19 +270,37 @@ input {
     padding: 20px 20px;
 }
 
+.circle {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(252, 239, 212);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .policy-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
     text-align: center;
-    margin-left: 25px;
-    margin-right: 25px;
-    width: 70px;
+
 }
 
 .policy-1 p {
     font-size: 12px;
+    width: 70px;
+    color: rgb(91, 91, 91);
 }
 
 .policy-1 .cross {
     font-size: 20px;
+    color: #3f3f3f;
 }
 
 .features .bold {
@@ -263,71 +325,148 @@ input {
     margin-right: 20px;
 }
 
-@media(max-width:1000px) {
+.trusted {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 115px;
+    height: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 11px;
+    background-color: #ededed;
+}
+
+.wishlist {
+    top: 16%;
+    right: 10%;
+    position: absolute;
+    font-size: 16px;
+}
+.heart{
+    width: 17px;
+    height: 15px;
+}
+
+.logo {
+    width: 23px;
+    height: 20px;
+}
+.userLogged{
+    padding: 2%;
+    border-radius: 5px;
+    border: 1px solid rgb(181, 181, 181);
+    background-color: rgb(246, 246, 246);
+    width: 140px;
+    height: 35px;
+    font-size: 11px;
+    position: absolute;
+    top: 11%;
+    right: 5%;
+    z-index: 999;
+}
+
+@media(max-width:900px) {
     .main {
         margin: 0;
         overflow: none;
     }
 
     .product {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin: 0;
+        margin-top: 2%;
     }
 
     .image {
-        width: 100%;
+        width: 60%;
+        height: 40%;
         display: flex;
         justify-content: center;
         margin: 0;
     }
 
-    .product img {
-        width: 500px;
-        height: 500px;
+    .product .img-1 {
+        margin-top: 2%;
+        width: 300px;
+        height: 300px;
     }
 
     .details {
-        width: 90%;
-        padding: 20px;
-
+        width: 60%;
+        margin-top: 2%;
     }
 
+    .trusted {
+        top: 24%;
+    }
+    .wishlist{
+        top: 18%;
+    }
+    .userLogged{
+        top: 13%;
+    }
+   
 }
 
 @media(max-width:550px) {
-    .product img {
+    .product .img-1 {
+        width: 70%;
+        height: 70%;
+    }
+
+    .image {
         width: 100%;
-        height: 80%;
+    }
+
+    .details {
+        margin-top: 5px;
+        width: 100%;
     }
 
     .heading {
-        font-size: 20px;
+        font-size: 14px;
     }
+
+    .tax {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    .Description {
+        font-size: 12px;
+    }
+
 
     .cost {
         display: flex;
         align-items: center;
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 700;
         color: rgb(89, 196, 239);
     }
 
     .discountPrice {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 700;
         color: rgb(89, 196, 239);
     }
 
     .productCost {
         text-decoration: line-through;
-        font-size: 16px;
+        font-size: 12px;
         font-weight: 700;
         color: rgb(153, 153, 153);
         margin-left: 15px;
     }
-    .cross{
-        font-size: 16px;
+
+    .cross {
+        font-size: 12px;
     }
+
     .btn-2 {
         margin-top: 40px;
         width: 120px;
@@ -340,7 +479,7 @@ input {
         background-color: #ff3737;
         cursor: pointer;
     }
-    
+
     .btn-3 {
         margin-top: 40px;
         width: 120px;
@@ -352,28 +491,28 @@ input {
         border-radius: 6px;
         cursor: pointer;
     }
-    
-    .quantity button {
-        width: 20px;
-        height: 21px;
-        font-size: 18px;
-        background-color: black;
-        border-radius: 4px;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
-    .policy{
+
+
+    .policy {
         margin-top: 60px;
     }
-    .features .bold{
+
+    .features .bold {
         font-size: 14px;
     }
+
     .dtls :nth-child(2) {
         font-size: 12px;
         line-height: 1.5;
     }
-    .Description{
+
+    .Description {
         font-size: 12px;
     }
+
+    .trusted {
+        top: 22%;
+    }
+   
+    
 }

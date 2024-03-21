@@ -67,11 +67,12 @@ export class AddressComponent implements OnInit {
           price = Math.round(price + (item.productCost * item.quantity))
         }
 
-        if (price > 5000) {
+        if (price > 500) {
           this.free = true
           this.notFree = false
           this.priceSummary.delivery = 0
         }
+        
         else {
           this.free = false
           this.notFree = true
@@ -80,8 +81,7 @@ export class AddressComponent implements OnInit {
       });
       this.priceSummary.price = price;
       this.priceSummary.discount = price * 10/100;
-      this.priceSummary.tax = Math.round(price *18/100);
-      this.priceSummary.total = Math.round(price + price * 18/100 - price * 10/100 + this.priceSummary.delivery)
+      this.priceSummary.total = Math.round(price - price * 10/100 + this.priceSummary.delivery)
     })
    
 

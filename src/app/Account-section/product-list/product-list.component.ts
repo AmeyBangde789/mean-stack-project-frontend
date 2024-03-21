@@ -38,7 +38,7 @@ export class ProductListComponent {
 
   openDialog(id:string) {
     this.dialog.open(DeleteProductDialogComponent, {
-      width:'25%',
+      width:'300px',
       data:id
     }).afterClosed().subscribe(val=>{
       if(val==='delete'){

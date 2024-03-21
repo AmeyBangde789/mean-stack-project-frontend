@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +22,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   imports: [CommonModule, FontAwesomeModule, RouterModule, HttpClientModule]
 })
 export class HeaderComponent implements OnInit {
+
+ 
+
   faMagnifyingGlass = faMagnifyingGlass;
   faCircleUser = faUserCircle;
   faCartShopping = faCartShopping;
@@ -66,6 +69,8 @@ export class HeaderComponent implements OnInit {
     } else {
       this.localCart.getCart()
     }
+
+    this.checkScreenSize
   }
 
   isVisible = false;
@@ -86,7 +91,7 @@ export class HeaderComponent implements OnInit {
       this.product.searchProduct(element.value).subscribe((result) => {
         console.log(result)
         if (result.length > 5) {
-          result.length = 2
+          result.length = 7
         }
         if (!result.length) {
           this.noResult = true
@@ -116,7 +121,33 @@ export class HeaderComponent implements OnInit {
   menu() {
     this.menuBar = !this.menuBar
   }
+
+  checkScreenSize() {
+    const isMobile = window.innerWidth <= 450;
+    let user = localStorage.getItem('user_id');
+    let admin = localStorage.getItem('Admin_id');
+    // if (isMobile && user) {
+    //   this.Router.navigate(['accounts']); // Navigate to mobile route
+    // } 
+    // else if(user){
+    //   this.Router.navigate(['accounts']);
+    // }
+    // else {
+    //   this.Router.navigate(['profile-info']); // Navigate to default route
+    // }   
+
+    // if(isMobile && admin){
+    //   this.Router.navigate(['admin-accounts']);
+    // }
+    // else if(admin){
+    //   this.Router.navigate(['admin-profile']);
+    // }
+    // else{
+    //   this.Router.navigate(['admin-profile']);
+    // }
+  }
+
+  productDetails(){
+    console.log('working')
+  }
 }
-
-
-

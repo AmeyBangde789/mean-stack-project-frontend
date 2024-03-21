@@ -6,7 +6,7 @@
 .menu {
     display: flex;
     margin-left: 3%;
-    margin-right: 50px
+    margin-right: 50px;
 }
 
 .colomn-1 {
@@ -58,15 +58,6 @@ img {
    
 }
 
-.column-3 {
-    margin-top: 20px;
-    margin-left: 2%;
-    width: 74%;
-    border: 1px solid rgb(223, 223, 223);
-    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
-
-}
-
 
 .icons {
     margin-left: 15px;
@@ -78,4 +69,34 @@ img {
 .main {
     margin-left: 10%;
     margin-right: 5vh;
+}
+
+@media(max-width:450px){
+    .menu{
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+    }
+    .container{
+        width: 95%;
+    }
+    .hello{
+        width: 100%;
+        align-items: center;
+        height: 70px;
+        box-shadow: none;
+    }
+    .colomn-1{
+        padding-left:0;
+    }
+    .colomn-2{
+        box-shadow: none;
+    }
+    .colomn-2 div{
+        width: 100%;
+    }
+    img{
+        margin-right: 20px;
+    }
+
 }

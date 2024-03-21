@@ -12,8 +12,9 @@
 
       <ul class="result" *ngIf="searchResult">
         <li *ngFor="let item of searchResult">
-          <img src="{{item.productImage}}" routerLink="/details/{{item._id}}">
-          <a style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 200ch;">{{item.productName}}</a>
+          <img src="{{item.productImage}}" (click)="productDetails()">
+          <a
+            style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 200ch;">{{item.productName}}</a>
         </li>
         <li *ngIf="noResult" class="no-result"><a>No result found...</a></li>
       </ul>
@@ -55,11 +56,11 @@
   <div>
     <div class="items">
       <a routerLink="/weights_and_barbells">WEIGHTS AND BARBELLS</a>
-      <a routerLink="/machines">MACHINES</a>
-      <a routerLink="/cardio_equipments">CARDIO</a>
+      <a routerLink="/machines">STRENGTH MACHINES</a>
+      <a routerLink="/cardio">CARDIO MACHINES</a>
+      <a routerLink="/benches_racks_and_grips">BENCHES,RACKS AND GRIPS</a>
       <a routerLink="/accessories">ACCESSORIES</a>
-      <a routerLink="/suppliments">SUPPLEMENTS </a>
-      <a routerLink="/clothing">CLOTHING</a>
+      <a routerLink="/supplements">SUPPLEMENTS </a>
     </div>
   </div>
 </div>
@@ -85,7 +86,8 @@
     <ul class="search-result" *ngIf="searchResult">
       <li *ngFor="let item of searchResult">
         <img src="{{item.productImage}}" routerLink="/details/{{item._id}}">
-        <a style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.productName}}</a>
+        <a
+          style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 100ch;">{{item.productName}}</a>
       </li>
       <li *ngIf="noResult" class="no-result"><a>No result found...</a></li>
     </ul>
@@ -103,7 +105,7 @@
           <a routerLink="/login"><fa-icon [icon]="faCircleUser" class="icons user"></fa-icon></a>
         </div>
         <div *ngIf="isLoggedIn()">
-          <a routerLink="/profile-info"><fa-icon [icon]="faCircleUser" class="icons user"></fa-icon></a>
+          <a routerLink="/accounts"><fa-icon [icon]="faCircleUser" class="icons user"></fa-icon></a>
         </div>
       </div>
 
@@ -131,9 +133,9 @@
     <a><fa-icon [icon]="cross" (click)="menu()" class="cross"></fa-icon></a>
     <a routerLink="/weights_and_barbells" (click)="menu()">WEIGHTS AND BARBELLS</a>
     <a routerLink="/machines" (click)="menu()">MACHINES</a>
-    <a routerLink="/cardio_equipments" (click)="menu()">CARDIO</a>
+    <a routerLink="/cardio" (click)="menu()">CARDIO</a>
+    <a routerLink="/benches_racks_and_grips" (click)="menu()">BENCHES,RACKS AND GRIPS</a>
     <a routerLink="/accessories" (click)="menu()">ACCESSORIES</a>
-    <a routerLink="/suppliments" v>SUPPLEMENTS </a>
-    <a routerLink="/clothing" (click)="menu()">CLOTHING</a>
+    <a routerLink="/supplements" (click)="menu()">SUPPLEMENTS </a>
   </div>
 </div>

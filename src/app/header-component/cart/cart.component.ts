@@ -87,7 +87,7 @@ export class CartComponent implements OnInit {
         }
 
 
-        if (price > 5000) {
+        if (price > 500) {
           this.free = true
           this.notFree = false
           this.priceSummary.delivery = 0
@@ -100,8 +100,7 @@ export class CartComponent implements OnInit {
       });
       this.priceSummary.price = price;
       this.priceSummary.discount = Math.round(price * 10 / 100);
-      this.priceSummary.tax = Math.round(price * 18 / 100);
-      this.priceSummary.total = Math.round(price + (price * 18 / 100) - (price * 10 / 100) + this.priceSummary.delivery)
+      this.priceSummary.total = Math.round(price - (price * 10 / 100) + this.priceSummary.delivery)
       console.log(this.priceSummary)
     })
     
@@ -143,13 +142,12 @@ export class CartComponent implements OnInit {
 
     }, 0)
 
-    this.taxCost = Math.round(this.totalCost * 18 / 100)
     this.discountCost = Math.round(this.totalCost * 10 / 100)
 
     this.cartData = this.localCart.getCart()
     let userData = localStorage.getItem("user_id")
 
-    if (this.totalCost > 5000) {
+    if (this.totalCost > 500) {
       this.free = true
       this.deliveryCost = 0
     }
@@ -164,7 +162,7 @@ export class CartComponent implements OnInit {
       this.deliveryCost = 500
     }
 
-    this.overAllCost = this.totalCost + this.deliveryCost + this.taxCost - this.discountCost
+    this.overAllCost = this.totalCost + this.deliveryCost - this.discountCost
     this.localCart.getCart()
   }
 

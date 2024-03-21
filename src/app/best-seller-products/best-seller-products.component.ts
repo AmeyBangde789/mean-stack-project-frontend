@@ -19,7 +19,7 @@ export class BestSellerProductsComponent {
   constructor(private orderService: OrderService) { }
 
   ngOnInit() {
-    this.orderService.bestSellers().subscribe((res) => {
+    this.orderService.bestSellersAll().subscribe((res) => {
       this.productList = res
     })
   }

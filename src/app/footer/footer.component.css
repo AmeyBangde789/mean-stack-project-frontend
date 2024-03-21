@@ -1,164 +1,106 @@
-*{
-    padding:0px;
-    margin:0px;
+footer {
+    background-color: #000000;
+    color: #fff;
+    padding: 50px 0;
 }
-.body{
-    
-    background-color: black;
-    color: white;
-    line-height: 28px;
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
-    bottom:0;
-    
-}
-.footer{
-    width: 100%;
-    display: flex;
-    padding-right: 50px;
-    border-bottom: 0.5px solid white;
-    padding-bottom: 45px;
-   
-}
-.logo{
-    margin-left :-15px;
-    margin-bottom: 15px;
-}
-
-
-.div1{
-    padding-left: 60px;
-    margin-left: 20px;
-    padding-right: 80px;
-}
-
-.div1 div img{
-    height: 80px;
-    width: 200px;
-    margin-top: 30px;
-    margin-bottom: -25px;
-
-}
-.div2{
-    margin-left: 30px;
-}
-
-p{
-    margin-bottom: 20px;
-}
-.div1 .icons{
-    font-size: 23px;
-    margin-right: 20px;
-}
-
-.footer div{
-    width: 30%;
-}
-
-
-ul li{
-    list-style: none;
-    line-height: 40px;
-    
-}
-
-h3{
-    margin-top: 50px;
-    margin-bottom: 20px;
-    margin-left: 39px;
-    color: rgb(255, 93, 93);
-}
-
-.div4 h3{
-   opacity: 0;
-}
-
-.div5{
+.row{
     display: flex;
     justify-content: center;
-    padding-top: 30px;
+    width: 100%;
 }
 
-.div6{
-    width: 100%;
+.row-2{
     display: flex;
     justify-content: space-around;
-    border-bottom: 0.5px solid white;
-    padding-bottom: 45px;
-    padding-left: 30px;
-
+    width: 50%;
 }
 
-.div6 a{
-    font-size: 13px;
+.footer-section {
+    margin-bottom: 30px;
 }
 
-.div6 .icons{
-    margin-right: 5px;
-    margin-left: 25px;
+.footer-section h4 {
+    color: #fff;
 }
 
-.div7{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    padding-bottom: 20px;
-    padding-right: 80px;
-    padding-left:80px;
-}
-.div8{
-    display: flex;
-}
-.div8 :first-child{
-    
-    margin-right:60px;
+.footer-section ul {
+    list-style: none;
+    padding: 0;
 }
 
-.cards img{
-    height: 33px;
-    width: 200px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    margin-right: 20px;
+.footer-section ul li {
+    margin-bottom: 8px;
 }
 
-@media only screen and (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        align-items: center;
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.contact-btn {
+    margin-top: 20px;
+}
+
+.contact-btn .btn {
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn .btn:hover {
+    background-color: #0056b3;
+}
+
+hr {
+    border-color: #444;
+}
+
+.footer-logo {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.list-inline-item a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.list-inline-item a:hover {
+    color: #fff;
+}
+
+@media (max-width: 767px) {
+    *{
+        font-size: 12px;
     }
-
-    .footer div {
+    .footer-logo{
+        width: 80px;
+    }
+    footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    footer .col-md-3 {
+        width: 50%;
+    }
+    .row{
+        display: block;
+    }
+    .row-2{
         width: 100%;
-        margin: 0;
     }
-
-    .div1 {
-        margin: 0;
+    .col-md-6{
         text-align: center;
-    }
-
-    .div3 {
-        margin-left: 0;
-    }
-
-    .div4 {
-        margin-left: 0;
-    }
-
-    .div6 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .div8 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .div8 :first-child {
-        margin-left: 0;
-        margin-right: 0;
     }
 }
 

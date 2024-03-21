@@ -1,22 +1,22 @@
 .container {
     max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 10px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
+
 .card {
-    width: 280px;
+    width: 250px;
     padding: 10px;
     margin: 10px;
-    height: 370px;
+    height: 330px;
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
-
 
 .image {
     width: 100%;
@@ -25,7 +25,6 @@
 }
 
 .image img{
-    border: 1px solid rgb(223, 223, 223);
     width: 95%;
     height: 95%
 }
@@ -51,7 +50,7 @@
 }
 
 .flex p{
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 700;
 }
 
@@ -91,8 +90,7 @@
 @media(max-width:1000px){
     .container {
         max-width: 100%;
-        margin: 0 auto;
-        padding: 10px;
+        padding: 20px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -146,21 +144,22 @@
 
 @media(max-width:500px){
     .card {
-        width: 175px;
-        height: 250px;
+        width: 155px;
+        height: 220px;
         padding: 5px;
         margin: 5px;
         border: 1px solid rgb(223, 223, 223);
         box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
     }
+
     .flex p{
         font-size: 12px;
         font-weight: 700;
     }
     .price p{
         font-size: 12px;
-        margin-left: 5px;
+        margin-left: 2px;
     }
     .productCost p{
         font-size: 12px;
@@ -178,6 +177,9 @@
     
     .info {
         height: 30%;
-        padding: 3.5%;
+        padding: 2%;
+    }
+    .price{
+        margin-top: -8px;
     }
 }

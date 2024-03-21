@@ -84,13 +84,11 @@ export class PaymentComponent {
     }
     this.orderService.orderDetails(orderData).subscribe((result)=>{
       alert('Order shipped')
-
       this.cartService.deleteAllcart(this.item.userId).subscribe(()=>{
       })
       this.router.navigate(['my-orders'])
       this.cartService.getCartList(this.item.userId);
       this.cartService.currentCart()
-
     })
   }
 }
