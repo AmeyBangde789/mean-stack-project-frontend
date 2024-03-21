@@ -445,21 +445,15 @@ input {
         display: flex;
         align-items: center;
         font-size: 14px;
-        font-weight: 700;
-        color: rgb(89, 196, 239);
     }
 
     .discountPrice {
         font-size: 14px;
-        font-weight: 700;
-        color: rgb(89, 196, 239);
     }
 
     .productCost {
         text-decoration: line-through;
         font-size: 12px;
-        font-weight: 700;
-        color: rgb(153, 153, 153);
         margin-left: 15px;
     }
 
@@ -468,16 +462,9 @@ input {
     }
 
     .btn-2 {
-        margin-top: 40px;
         width: 120px;
         height: 37px;
         font-size: 12px;
-        font-weight: 500;
-        color: white;
-        border: none;
-        border-radius: 6px;
-        background-color: #ff3737;
-        cursor: pointer;
     }
 
     .btn-3 {
@@ -485,11 +472,6 @@ input {
         width: 120px;
         height: 37px;
         font-size: 12px;
-        font-weight: 500;
-        color: #ff3737;
-        border: 1px solid #ff3737;
-        border-radius: 6px;
-        cursor: pointer;
     }
 
 
