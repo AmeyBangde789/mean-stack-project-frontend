@@ -48,8 +48,7 @@ export class LoginComponent {
           console.log(err);
 
           alert("Email or password is incorrect !!!")
-
-
+          
         }
       })
   }

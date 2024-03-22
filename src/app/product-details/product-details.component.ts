@@ -64,6 +64,7 @@ export class ProductDetailsComponent {
       productId && this.searchproductservice.searchproductbyid(productId)
         .subscribe(res => {
           this.productData = res;
+          window.scrollTo({top:0, behavior:"auto"})
           let cartData = localStorage.getItem('cartProducts');
           if (productId && cartData) {
             let items = JSON.parse(cartData);
