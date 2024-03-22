@@ -1,8 +1,7 @@
 [build]
 base=""
 command="npm run build:prod"
-commandOrigin: config
-publish: /opt/build/repo/dist/browser
+publish="dist/browser"
 
 [[redirects]]
 from="/*"
