@@ -4,6 +4,6 @@ command="npm run build:prod"
 publish="dist/browser"
 
 [[redirects]]
-from="/*"
-to ="/index.html"
+from="*"
+to ="index.html"
 status=200
