@@ -1,6 +1,9 @@
 [build]
-publish = "dist/new-project/browser"
+base= ""
 command = "npm run build:prod"
+publish = "dist/new-project/browser"
+
+
 [[redirects]]
 from = "/*"
 to = "/index.html"
