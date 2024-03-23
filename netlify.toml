@@ -1,6 +1,6 @@
 [build]
 base= ""
-command = "npm run build:prod"
+command = "ng build --prodd"
 publish = "dist/new-project/browser"
 
 
