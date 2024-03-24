@@ -9,7 +9,6 @@ import { CartService } from '../../services/cart.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -48,11 +47,10 @@ export class LoginComponent {
           console.log(err);
 
           alert("Email or password is incorrect !!!")
-          
+
         }
       })
   }
-
 
   localCartToRemoteCart() {
     let data = localStorage.getItem('cartProducts');
