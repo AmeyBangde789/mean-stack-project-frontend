@@ -22,6 +22,7 @@
     width: 100%;
     height: 72%;
     margin: 2.5%;
+    position: relative;
 }
 
 .image img{
@@ -60,19 +61,18 @@
 }
 
 .badge {
-    margin-left: -1%;
     width: 65px;
+    margin-left: -6.6%;
     height: 22px;
-    background-color: rgb(216, 28, 28);
+    background-color: rgb(62, 165, 85);
     position: absolute;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     font-size: 12px;
     font-weight: 700;
-}
-
-.badge .discount {
-    margin-top: 3px;
 }
 
 .discountCost {
@@ -125,15 +125,10 @@
         margin-top: 1px;
     }
     .badge {
-        margin-left: -1%;
+        margin-left: -5%;
         width: 53px;
         height: 20px;
-        background-color: rgb(216, 28, 28);
-        position: absolute;
-        color: white;
-        text-align: center;
         font-size: 10px;
-        font-weight: 700;
     }
     .flex p{
         font-size: 13px;
@@ -182,4 +177,5 @@
     .price{
         margin-top: -8px;
     }
+    
 }

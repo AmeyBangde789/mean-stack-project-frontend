@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form" [ngClass]="{'blur-bg': isBlur}">
     <div>
         <form [formGroup]="registerForm" class="div">
             <div class="login">
@@ -62,3 +62,4 @@
         </form>
     </div>
 </div>
+<div class="pop-up" *ngIf="show">Registered successfully ! <fa-icon [icon]="check" class="check"></fa-icon></div>

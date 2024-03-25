@@ -9,11 +9,11 @@ import { apisearchProduct } from '../validators/api.search-product';
 export class SearchedProductService {
 
   constructor(private http: HttpClient) { }
-  getProduct(key:any){
-    return this.http.get<any>(`${apisearchProduct.searchProductServiceApi}products/${key}`)
-    .pipe(map((res:any)=>{
-      return res;
-    }))
-  }
+  // getProduct(key:any){
+  //   return this.http.get<any>(`${apisearchProduct.searchProductServiceApi}products/${key}`)
+  //   .pipe(map((res:any)=>{
+  //     return res;
+  //   }))
+  // }
 }
 

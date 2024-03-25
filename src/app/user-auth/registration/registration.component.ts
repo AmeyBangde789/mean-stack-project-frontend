@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-registration',
@@ -21,7 +22,9 @@ export class RegistrationComponent implements OnInit{
   authService = inject(AuthService);
   router= inject(Router);
   dumbbell=faDumbbell
-  
+  check=faCircleCheck
+  show=false
+  isBlur=false
   registerForm !: FormGroup;
 
   ngOnInit(): void {
@@ -37,19 +40,26 @@ export class RegistrationComponent implements OnInit{
     validator: confirmPasswordValidator('password','ConfirmPassword')
    }
    );
+   setTimeout(() => {
+    if(this.show=true){
+      this.show=false
+      this.isBlur=false
+    }
+   }, 2000);
   }
 
   register(){
    this.authService.registerService(this.registerForm.value)
    .subscribe({
     next:(res)=>{
-      alert("User created!");
       this.registerForm.reset();
-      this.router.navigate(['login'])
-
+      this.isBlur=true
+      this.show=true
+      setTimeout(() => {
+        this.router.navigate(['login'])
+      }, 2000);
     },
     error:(err)=>{
-      console.log(err);
     }
    })
   }

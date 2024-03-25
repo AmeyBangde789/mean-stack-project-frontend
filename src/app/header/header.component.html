@@ -7,7 +7,7 @@
         <input type="text" #searchInput (keyup)="searchProduct($event)"
           (keydown.enter)="submitSearch(searchInput.value)" (blur)="hideSearch()"
           placeholder=" Search gym equipements,accessories and suppliments....">
-        <div (click)="submitSearch(searchInput.value)" class="mg"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></div>
+        <div (click)="submitSearch(searchInput.value)" class="mg"><fa-icon [icon]="faMagnifyingGlass" class="m-glass icons"></fa-icon></div>
       </div>
 
       <ul class="result" *ngIf="searchResult">
@@ -48,32 +48,29 @@
       <div class="cart" *ngIf="!isAdminLoggedIn()">
         <a routerLink="/cart"><fa-icon [icon]="faCartShopping" class="icons"></fa-icon></a>
         <div class="badge" *ngIf="!change">{{cartItems}}</div>
-
       </div>
     </div>
 
   </div>
   <div>
     <div class="items">
-      <a routerLink="/weights_and_barbells">WEIGHTS AND BARBELLS</a>
-      <a routerLink="/machines">STRENGTH MACHINES</a>
-      <a routerLink="/cardio">CARDIO MACHINES</a>
-      <a routerLink="/benches_racks_and_grips">BENCHES,RACKS AND GRIPS</a>
-      <a routerLink="/accessories">ACCESSORIES</a>
-      <a routerLink="/supplements">SUPPLEMENTS </a>
+      <a routerLink="/category/Weights and Barbells">WEIGHTS AND BARBELLS</a>
+      <a routerLink="/category/Machines">STRENGTH MACHINES</a>
+      <a routerLink="/category/Cardio">CARDIO MACHINES</a>
+      <a routerLink="/category/Benches, Racks and Grips">BENCHES,RACKS AND GRIPS</a>
+      <a routerLink="/category/Accessories">ACCESSORIES</a>
+      <a routerLink="/category/Supplements">SUPPLEMENTS </a>
     </div>
   </div>
 </div>
-
-
 
 <div class="sideBar">
   <div class="header">
     <div (click)="menu()"><fa-icon [icon]="faBars" class="menu"></fa-icon></div>
     <div class="logo"><a routerLink="/"><img class="img1" src="assets/newlogo.jpg"></a></div>
 
-    <div class="search-box" *ngIf="searchBox">
-      <div class="inner-search-box">
+    <div class="search-box" *ngIf="searchBox" >
+      <div class="inner-search-box" >
         <input type="text" #searchInput (keyup)="searchProduct($event)"
           (keydown.enter)="submitSearch(searchInput.value)" (blur)="hideSearch()"
           placeholder=" Search gym equipements,accessories and suppliments....">
@@ -83,7 +80,7 @@
       </div>
       <fa-icon [icon]="cross" (click)="search()"></fa-icon>
     </div>
-    <ul class="search-result" *ngIf="searchResult">
+    <ul class="search-result" *ngIf="searchResult" >
       <li *ngFor="let item of searchResult">
         <img src="{{item.productImage}}" routerLink="/details/{{item._id}}">
         <a
@@ -119,7 +116,7 @@
       </div>
 
       <div class="cart" *ngIf="!isAdminLoggedIn()">
-        <a routerLink="/cart"><fa-icon [icon]="faCartShopping" class="icons"></fa-icon></a>
+        <a routerLink="/cart"><fa-icon [icon]="faCartShopping" class="icons" *ngIf="!change"></fa-icon></a>
         <div class="badge" *ngIf="!change">{{cartItems}}</div>
       </div>
     </div>
@@ -128,14 +125,15 @@
 </div>
 
 
-<div>
-  <div class="sideBar-items" *ngIf="menuBar">
+<div (mouseleave)="menu()" >
+  <div class="sideBar-items" *ngIf="menuBar" >
     <a><fa-icon [icon]="cross" (click)="menu()" class="cross"></fa-icon></a>
-    <a routerLink="/weights_and_barbells" (click)="menu()">WEIGHTS AND BARBELLS</a>
-    <a routerLink="/machines" (click)="menu()">MACHINES</a>
-    <a routerLink="/cardio" (click)="menu()">CARDIO</a>
-    <a routerLink="/benches_racks_and_grips" (click)="menu()">BENCHES,RACKS AND GRIPS</a>
-    <a routerLink="/accessories" (click)="menu()">ACCESSORIES</a>
-    <a routerLink="/supplements" (click)="menu()">SUPPLEMENTS </a>
+    <a routerLink="/category/Weights and Barbells" (click)="menu()">WEIGHTS AND BARBELLS</a>
+    <a routerLink="/category/Machines" (click)="menu()">MACHINES</a>
+    <a routerLink="/category/Cardio" (click)="menu()">CARDIO</a>
+    <a routerLink="/category/Benches, Racks and Grips" (click)="menu()">BENCHES,RACKS AND GRIPS</a>
+    <a routerLink="/category/Accessories" (click)="menu()">ACCESSORIES</a>
+    <a routerLink="/category/Supplements" (click)="menu()">SUPPLEMENTS </a>
   </div>
 </div>
+

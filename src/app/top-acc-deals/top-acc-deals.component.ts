@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { GetAllProductsService } from '../services/get-all-products.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class TopAccDealsComponent {
   products:any
   selectedTagIndex: string | null = null;
 
-  constructor(private getAllproducts:GetAllProductsService){}
+  constructor(private getAllproducts:GetAllProductsService, private router:Router){}
 
   ngOnInit(){
     return this.getAllproducts.getaccTypeDiscount("Gloves and Wrist Straps").subscribe((res)=>{
@@ -37,6 +37,6 @@ export class TopAccDealsComponent {
     })
   }
   viewAll(){
-    window.open(`${this.selectedTagIndex}`, '_blank');
+    this.router.navigate([ `${this.selectedTagIndex}`]);
   }
 }

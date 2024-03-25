@@ -9,7 +9,6 @@
 
 .flex-box2 {
     margin-left: 7%;
-    width: 100%;
 }
 
 .box {
@@ -277,12 +276,10 @@ select {
     cursor: pointer;
 }
 
-
 .summary {
     width: 250px;
     height: 180px;
-    margin-top: 30px;
-    margin-right: 120px;
+    margin: 30px 100px 0 0;
     border: 1px solid rgb(223, 223, 223);
     box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -390,6 +387,7 @@ select {
     }
     .addressData{
         width: 100%;
+        margin-bottom: 10px;
     }
     .address,.address-1{
         font-size: 12px;

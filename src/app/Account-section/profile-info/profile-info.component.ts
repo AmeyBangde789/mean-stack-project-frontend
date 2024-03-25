@@ -49,7 +49,6 @@ export class ProfileInfoComponent {
 
 update(id:string){
   this.authService.updateUser(id,this.profileUpdate.value).subscribe((result)=>{
-    alert ('User Updated')
     })
 }
 

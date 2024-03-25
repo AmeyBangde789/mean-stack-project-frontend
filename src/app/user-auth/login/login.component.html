@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form" [ngClass]="{'blur-bg': isBlur}">
     <div>
         <form [formGroup]="loginForm" class="div">
             <div class="login">
@@ -13,12 +13,10 @@
                         <P routerLink="/registration">Register</P>
                     </div>
                 </div>
-
                 <div class="input">
-                    <input formControlName="email" type="text" placeholder=" Email ">
+                    <input formControlName="email" type="text" placeholder=" Email">
                     <span *ngIf="loginForm.hasError('required','email') && loginForm.controls['email'].dirty"
-                        class="required">*Email is required</span>
-                    <span *ngIf="loginForm.hasError('email','email')" class="required">*Email is invalid</span><br>
+                        class="required">*Email is required</span><br>
                 </div>
 
                 <div class="input">
@@ -26,6 +24,7 @@
                     <span *ngIf="loginForm.hasError('required','password') && loginForm.controls['password'].dirty"
                         class="required">*Password is required</span><br>
                 </div>
+                <span class="required" *ngIf="show">*Wrong email or password !</span><br>
 
                 <button [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid" (click)="login()">SIGN
                     IN</button>
@@ -42,3 +41,4 @@
         </form>
     </div>
 </div>
+<div class="pop-up" *ngIf="popup">Logged in successfully<fa-icon [icon]="check" class="check"></fa-icon></div>

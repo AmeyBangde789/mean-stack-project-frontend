@@ -40,6 +40,6 @@ export class TopSuppDealsComponent {
   }
 
   viewAll(){
-    window.open(`${this.selectedTagIndex}`, '_blank');
+    this.router.navigate([ `${this.selectedTagIndex}`]);
   }
 }

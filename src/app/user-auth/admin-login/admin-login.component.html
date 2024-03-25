@@ -1,4 +1,4 @@
-<div class="form">
+<div class="form" [ngClass]="{'blur-bg': isBlur}">
     <div>
         <form [formGroup]="loginForm" class="div">
             <div class="login">
@@ -8,7 +8,6 @@
 
                 <div class="select"><p class="p1">Admin's Login</p></div>
                 
-
                 <div class="input">
                     <input formControlName="email" type="text" placeholder=" Email ">
                     <span *ngIf="loginForm.hasError('required','email') && loginForm.controls['email'].dirty"
@@ -21,7 +20,7 @@
                     <span *ngIf="loginForm.hasError('required','password') && loginForm.controls['password'].dirty"
                         class="required">*Password is required</span><br>
                 </div>
-
+                <span class="required" *ngIf="show">*Wrong email or password !</span><br>
                 <button [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid" (click)="login()">SIGN IN</button>
                 <div class="line">_______________________________________</div>
 

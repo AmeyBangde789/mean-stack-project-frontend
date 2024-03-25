@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-admin-login',
@@ -19,6 +20,10 @@ export class AdminLoginComponent {
   loginForm !: FormGroup;
   authService = inject(AuthService);
   dumbbell=faDumbbell
+  show=false
+  check=faCircleCheck
+  popup=false
+  isBlur=false
 
   ngOnInit(): void {
    this.loginForm = this.fb.group({
@@ -26,20 +31,30 @@ export class AdminLoginComponent {
     password: ['', Validators.required],
    },
    );
+   setTimeout(() => {
+    if(this.popup=true){
+      this.popup=false
+      this.isBlur=false
+    }
+   }, 2000);
   }
 
   login(){
     this.authService.adminLoginService(this.loginForm.value)
     .subscribe({
       next:(res)=>{
-        alert("Admin Login Successfully!");
         localStorage.setItem("Admin_id",JSON.stringify(res.data));
-        this.router.navigate(['']);
         this.loginForm.reset();
+        this.isBlur=true
+        this.popup=true
+        setTimeout(() => {
+          this.router.navigate(['']);
+        }, 2000);
       },
       error:(err)=>{
         console.log(err);
-        alert("Email or password is incorrect !!!")
+        this.show=true
+        this.loginForm.reset()
       }
     })
   }

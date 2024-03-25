@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { faIndianRupeeSign } from '@fortawesome/free-solid-svg-icons';
-import { SearchedProductService } from '../service/searched-product.service';
+import { SearchProductService } from '../services/search-product.service';
 
 @Component({
   selector: 'app-searched-products',
@@ -17,12 +17,12 @@ export class SearchedProductsComponent {
   faIndianRupeeSign = faIndianRupeeSign
   noResult: any
 
-  constructor(private SearchedProductService: SearchedProductService, private ActivatedRoute: ActivatedRoute) { }
+  constructor(private searchproductservice:SearchProductService, private ActivatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.ActivatedRoute.params.subscribe(params => {
       const key = params['key']
-      this.SearchedProductService.getProduct(key)
+      this.searchproductservice.searchProduct(key)
         .subscribe(res => {
           this.productList = res;
           if (!res.length) {

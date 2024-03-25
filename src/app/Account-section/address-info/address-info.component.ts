@@ -58,7 +58,6 @@ export class AddressInfoComponent {
   addAddress() {
     this.orderService.postAddress(this.addressForm.value).subscribe({
       next: () => {
-        alert('new address added')
         this.cancel()
         this.addressForm.reset()
         this.getAddress()
@@ -103,7 +102,6 @@ export class AddressInfoComponent {
   updateAddress(id: string) {
     this.orderService.updateAddress(id, this.addressForm.value).subscribe({
       next: () => {
-        alert('address uodated')
         this.cancel()
         this.getAddress()
         this.div=true
@@ -136,7 +134,6 @@ export class AddressInfoComponent {
   
 deleteAdd(id:string){
   this.orderService.deleteAddByid(id).subscribe((result)=>{
-    alert('Address deleted !')
     this.getAddress()
   })
 }

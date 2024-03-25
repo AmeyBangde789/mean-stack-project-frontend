@@ -56,14 +56,13 @@
                                     <input placeholder="{{item.quantity}}" class="qnt-input" type="text">
                                     <button (click)="incrementQuantity(item._id,item.quantity)" class="qnt-2">+</button>
                                 </div>
-                                <button class="btn-2"  (click)="openDialog(item)"><fa-icon [icon]="faTrash"
-                                    class="icons uil-search open-search"></fa-icon></button>
+                                <button class="btn-2" (click)="openDialog(item)"><fa-icon [icon]="faTrash"
+                                        class="icons uil-search open-search"></fa-icon></button>
                             </div>
                         </div>
-                        <div class="remove"> 
+                        <div class="remove">
                             <div class="btn-4" (click)="openDialog(item)">Remove</div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -96,7 +95,7 @@
                 <img src="assets/emptycart.png" alt="">
                 <h2>Your cart is empty!</h2>
                 <p>Add item to it now.</p>
-                <button routerLink="/weights_and_barbells" class="btn btn-primary">Shop Now</button>
+                <button routerLink="/best-seller" class="btn btn-primary">Shop Now</button>
             </div>
         </div>
     </ng-container>
@@ -105,60 +104,62 @@
 
 
 
-<div>
+<div class="main">
     <ng-container *ngIf="see">
         <div class="container">
             <div class="box">
                 <div class="cart-container">
-
-                    <div *ngFor="let item of cartProducts; let i=index" class="cart">
-
-                        <div class="image"><img src="{{item.productImage}}" alt="">
-                        </div>
-                        <div class="info">
-
-                            <div class="name">{{item.productBrand}} {{item.productName}}</div>
-
-                            <div class="net-wt">Net Weight : {{item.productWeight}}</div>
-
-                            <div class="flex">
-                                <div class="price-flex">
-                                    <div class="price">
-                                        <div *ngIf="item.productDiscount>0" class="discount">{{item.productDiscount}}%
-                                        </div>
-
-                                        <div *ngIf="item.productDiscount>0" class="underline">{{item.productCost |
-                                            number:"1.0-0"}}
-                                        </div>
-                                        <div *ngIf="!item.productDiscount">{{item.productCost | number:"1.0-0"}}
-                                        </div>
-
-                                        <div *ngIf="item.productDiscount>0" class="discount-price">{{item.productCost -
-                                            item.productCost *
-                                            item.productDiscount/100 | currency:"INR" }}</div>
-                                        <div *ngIf="item.productDiscount==0 && item.productDiscount">{{item.productCost
-                                            -
-                                            item.productCost *
-                                            item.productDiscount/100 | currency:"INR" }}</div>
-                                    </div>
-
-                                </div>
-
-                                <div class="info-2">
-                                    <div class="inc-dec"><button (click)="dec(i)" class="qnt-1">-</button>
-                                        <input placeholder="{{item.quantity}}" class="qnt-input" type="text">
-                                        <button (click)="inc(i)" class="qnt-2">+</button>
-                                    </div>
-                                    <button class="btn-2" (click)="deleteItem(item._id)"><fa-icon [icon]="faTrash"
-                                            class="icons uil-search open-search"></fa-icon></button>
-                                </div>
-
+                    <div *ngFor="let item of cartProducts; let i=index">
+                        <div  class="cart">
+                            <div class="image"><img src="{{item.productImage}}" alt="">
                             </div>
+                            <div class="info">
+
+                                <div class="name">{{item.productBrand}} {{item.productName}}</div>
+
+                                <div class="net-wt">Net Weight : {{item.productWeight}}</div>
+
+                                <div class="flex">
+                                    <div class="price-flex">
+                                        <div class="price">
+                                            <div *ngIf="item.productDiscount>0" class="discount">
+                                                {{item.productDiscount}}%
+                                            </div>
+
+                                            <div *ngIf="item.productDiscount>0" class="underline">{{item.productCost |
+                                                number:"1.0-0"}}
+                                            </div>
+                                            <div *ngIf="!item.productDiscount">{{item.productCost | number:"1.0-0"}}
+                                            </div>
+
+                                            <div *ngIf="item.productDiscount>0" class="discount-price">
+                                                {{item.productCost -
+                                                item.productCost *
+                                                item.productDiscount/100 | currency:"INR" }}</div>
+                                            <div *ngIf="item.productDiscount==0 && item.productDiscount">
+                                                {{item.productCost
+                                                -
+                                                item.productCost *
+                                                item.productDiscount/100 | currency:"INR" }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="info-2">
+                                <div class="inc-dec"><button (click)="dec(i)" class="qnt-1">-</button>
+                                    <input placeholder="{{item.quantity}}" class="qnt-input" type="text">
+                                    <button (click)="inc(i)" class="qnt-2">+</button>
+                                </div>
+                                <button class="btn-2" (click)="deleteItem(item._id)"><fa-icon [icon]="faTrash"
+                                        class="icons uil-search open-search"></fa-icon></button>
+                            </div>
+                        </div>
+                        <div class="remove">
+                            <div class="btn-4" (click)="deleteItem(item._id)">Remove</div>
                         </div>
                     </div>
                 </div>
             </div>
-
 
 
             <div class="summary">
@@ -188,7 +189,7 @@
                 <img src="assets/emptycart.png" alt="">
                 <h2>Your cart is empty!</h2>
                 <p>Add item to it now</p>
-                <button routerLink="/weights_and_barbells" class="btn btn-primary">Shop Now</button>
+                <button routerLink="/best-seller" class="btn btn-primary">Shop Now</button>
             </div>
         </div>
     </ng-container>

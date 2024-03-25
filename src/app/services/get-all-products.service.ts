@@ -48,6 +48,9 @@ export class GetAllProductsService {
   getProductsByType(type:string){
     return this.http.get<any[]>(`${apiProducts.productApiService}route/productsbytype/${type}`)
   }
+  getProductsByCategory(type:string){
+    return this.http.get<any[]>(`${apiProducts.productApiService}route/productsbycategory/${type}`)
+  }
   getProductsByBrand(brand:string){
     return this.http.get<any[]>(`${apiProducts.productApiService}route/getbybrands/${brand}`)
   }

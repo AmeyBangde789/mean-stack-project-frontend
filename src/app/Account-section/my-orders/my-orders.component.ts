@@ -31,6 +31,5 @@ export class MyOrdersComponent {
         this.show=true
       }
     })
-    
   }
 }

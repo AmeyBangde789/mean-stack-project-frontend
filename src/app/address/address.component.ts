@@ -130,7 +130,6 @@ export class AddressComponent implements OnInit {
   save() {
     this.orderService.postAddress(this.addressForm.value).subscribe({
       next: (res) => {
-        alert('address saved')
         this.addressForm.reset();
        this.cancel();
        this.getAddress();
@@ -140,7 +139,6 @@ export class AddressComponent implements OnInit {
   update(_id: string) {
     this.orderService.updateAddress(_id, this.updateForm.value).subscribe({
       next: () => {
-        alert('addres updated !!!')
         this.close()
         this.isSelected(_id)
         this.selectAddress(_id)

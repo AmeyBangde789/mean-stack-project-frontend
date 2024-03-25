@@ -34,9 +34,9 @@
             <ng-container *ngFor="let item of products">
                 <div class="card" routerLink="/details/{{item._id}}/{{item.productType}}">
                     <div class="image">
-                        <span class="badge" *ngIf="item.productDiscount>0 ">
-                            <p class="discount">{{item.productDiscount}}% OFF</p>
-                        </span>
+                        <div class="badge" *ngIf="item.productDiscount>0 ">
+                            <div class="discount">{{item.productDiscount}}% OFF</div>
+                        </div>
                         <img src="{{item.productImage}}" alt="">
                     </div>
                     <div class="info">

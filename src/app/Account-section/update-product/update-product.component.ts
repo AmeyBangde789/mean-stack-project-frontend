@@ -53,7 +53,6 @@ export class UpdateProductComponent {
   updateProduct(productId:string){
     this.getAllproducts.updateProduct(productId, this.updateProductForm.value).subscribe({
       next:()=>{
-        alert ("Product Updated !")
         this.route.navigate(['product-list'])
       }
     })

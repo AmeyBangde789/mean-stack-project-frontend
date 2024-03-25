@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { product } from '../../data-type';
@@ -9,10 +9,11 @@ import { CartService } from '../../services/cart.service';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { faDumbbell } from '@fortawesome/free-solid-svg-icons';
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterModule, FontAwesomeModule, MatFormFieldModule, MatInputModule,],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule, FontAwesomeModule, MatFormFieldModule, MatInputModule,FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -22,6 +23,10 @@ export class LoginComponent {
   router = inject(Router);
   loginForm !: FormGroup;
   dumbbell=faDumbbell
+  show=false
+  check=faCircleCheck
+  popup=false
+  isBlur=false
 
   constructor(private product: CartService) { }
   ngOnInit(): void {
@@ -30,28 +35,34 @@ export class LoginComponent {
       password: ['', Validators.required],
     },
     );
+    setTimeout(() => {
+      if(this.popup=true){
+        this.popup=false
+        this.isBlur=false
+      }
+     }, 2000);
   }
 
   login() {
     this.authService.loginService(this.loginForm.value)
       .subscribe({
         next: (res) => {
-          alert("Login Successfully!");
-          
           localStorage.setItem('user_id', JSON.stringify(res.data));
-          this.router.navigate(['']);
           this.loginForm.reset();
           this.localCartToRemoteCart()
+          this.isBlur=true
+          this.popup=true
+          setTimeout(() => {
+            this.router.navigate(['']);
+          }, 2000);
         },
         error: (err) => {
-          console.log(err);
-
-          alert("Email or password is incorrect !!!")
-
+          this.show=true
+          this.loginForm.reset()
         }
       })
   }
-
+  
   localCartToRemoteCart() {
     let data = localStorage.getItem('cartProducts');
     let user = localStorage.getItem('user_id');

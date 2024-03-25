@@ -28,12 +28,22 @@ export class PaymentComponent {
     total: 0,
   }
 
+  popup=false
+  isBlur=false
+
   constructor(private cartService: CartService, private orderService:OrderService){}
   @Input() item:any
 
   radioChecked: boolean = false;
 
   ngOnInit(){
+    setTimeout(() => {
+      if(this.popup=true){
+        this.popup=false
+        this.isBlur=false
+      }
+     }, 3000);
+     
     return this.cartService.currentCart().subscribe((result)=>{
       this.cartData=result
 
@@ -58,7 +68,7 @@ export class PaymentComponent {
       this.priceSummary.discount = price * 10/100;
       this.priceSummary.tax = Math.round(price *18/100);
       this.priceSummary.total = Math.round(price + price * 18/100 - price * 10/100 + this.priceSummary.delivery)
-    })
+    });
   }
 
 
@@ -83,10 +93,13 @@ export class PaymentComponent {
       products:order
     }
     this.orderService.orderDetails(orderData).subscribe((result)=>{
-      alert('Order shipped')
       this.cartService.deleteAllcart(this.item.userId).subscribe(()=>{
       })
-      this.router.navigate(['my-orders'])
+      this.isBlur=true
+      this.popup=true
+      setTimeout(() => {
+        this.router.navigate(['my-orders'])
+      }, 3000);
       this.cartService.getCartList(this.item.userId);
       this.cartService.currentCart()
     })

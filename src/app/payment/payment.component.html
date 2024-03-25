@@ -4,3 +4,10 @@
         <div><button class="btn" *ngIf="radioChecked" (click)="orderPlaced(button.value)">CONFIRM ORDER</button></div>
     </div>
 </div>
+
+<div class="message-container" *ngIf="popup">
+    <div class="message-box">
+      <div class="icon">✓</div>
+      <div class="message">Your order has been placed successfully!</div>
+    </div>
+  </div>

@@ -50,7 +50,6 @@ export class AddProductsComponent implements OnInit {
     this.authService.addproductService(this.addproductForm.value)
       .subscribe({
         next: (res) => {
-          alert("Product Added");
           this.addproductForm.reset();
           this.router.navigate(['add-products'])
         },

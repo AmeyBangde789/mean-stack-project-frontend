@@ -22,15 +22,30 @@ export class RelatedProductsComponent implements OnInit{
     this.relatedPro()
   }
   relatedPro(){
-    let productType = this.activatedRoute.snapshot.paramMap.get('type');
-    let productId = this.activatedRoute.snapshot.paramMap.get('id')
-    productType && productId && this.getAllproducts.getRelatedProducts(productType, productId).subscribe((res) => {
-      this.relatedProducts = res
-      this.relatedProducts= this.relatedProducts.slice(0, 6);
-      if(res.length>0){
-        this.show=true
-      }
+    // let productType = this.activatedRoute.snapshot.paramMap.get('type');
+    // let productId = this.activatedRoute.snapshot.paramMap.get('id')
+    // productType && productId && this.getAllproducts.getRelatedProducts(productType, productId).subscribe((res) => {
+    //   this.relatedProducts = res
+    //   this.relatedProducts= this.relatedProducts.slice(0, 6);
+    //   if(res.length>0){
+    //     this.show=true
+    //   }
+    // })
+    this.activatedRoute.params.subscribe(params => {
+      const type = params['type'];
+      const id=params['id']
+
+      this.getAllproducts.getRelatedProducts(type,id)
+        .subscribe(res => {
+          this.relatedProducts = res;
+          this.relatedProducts = this.relatedProducts.slice(0, 6);
+          if (res.length>0) {
+                  this.show=true
+          }
+
+        })
     })
+
   }
   select(id:string,type:string){
     this.router.navigate([`details/${id}/${type}`])

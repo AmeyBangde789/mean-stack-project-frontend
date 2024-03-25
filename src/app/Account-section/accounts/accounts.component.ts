@@ -9,8 +9,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { CartService } from '../../services/cart.service';
 
-
-
 @Component({
   selector: 'app-accounts',
   standalone: true,
@@ -30,7 +28,6 @@ export class AccountsComponent {
   constructor(private product: CartService) { }
   logout(): void {
     localStorage.removeItem('user_id');
-    alert("You logged out successfully !")
     this.router.navigate(['login'])
     this.product.cartData.emit([])
   }

@@ -2,12 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegistrationComponent } from './user-auth/registration/registration.component';
 import { HomeComponent } from './home/home.component';
-import { WeightsAndBarbellsComponent } from './header-component/weights-and-barbells/weights-and-barbells.component';
 import { CartComponent } from './header-component/cart/cart.component';
-import { CardioComponent } from './header-component/cardio/cardio.component';
-import { MachinesComponent } from './header-component/machines/machines.component';
-import { AccessoriesComponent } from './header-component/accessories/accessories.component';
-import { SupplimentsComponent } from './header-component/suppliments/suppliments.component';
 import { ForgetPasswordComponent } from './user-auth/forget-password/forget-password.component';
 import { ResetComponent } from './user-auth/reset/reset.component';
 import { AccountsComponent } from './Account-section/accounts/accounts.component';
@@ -23,13 +18,11 @@ import { WishListComponent } from './header-component/wish-list/wish-list.compon
 import { ProfileInfoComponent } from './Account-section/profile-info/profile-info.component';
 import { MyOrdersComponent } from './Account-section/my-orders/my-orders.component';
 import { AddressInfoComponent } from './Account-section/address-info/address-info.component';
-import { BestSellersComponent } from './best-sellers/best-sellers.component';
 import { BestSellerProductsComponent } from './best-seller-products/best-seller-products.component';
 import { AdminProfileInfoComponent } from './Account-section/admin-profile-info/admin-profile-info.component';
 import { AddProductsComponent } from './Account-section/add-products/add-products.component';
-import { TopDealsComponent } from './top-deals/top-deals.component';
 import { TopDealsProductsComponent } from './top-deals-products/top-deals-products.component';
-import { BenchRacksGripsComponent } from './header-component/bench-racks-grips/bench-racks-grips.component';
+import { CommonComponentComponent } from './header-component/common-component/common-component.component';
 
 
 export const routes: Routes = [
@@ -54,39 +47,9 @@ export const routes: Routes = [
         title: "Add Products | FitEssentials Hub"
     },
     {
-        path: 'weights_and_barbells',
-        component: WeightsAndBarbellsComponent,
-        title: "Weights & Barbells| FitEssentials Hub"
-    },
-    {
-        path: 'machines',
-        component: MachinesComponent,
-        title: "Machines| FitEssentials Hub"
-    },
-    {
         path: 'cart',
         component: CartComponent,
         title: "Cart | FitEssentials Hub"
-    },
-    {
-        path: 'cardio',
-        component: CardioComponent,
-        title: "Cardio Equipments | FitEssentials Hub"
-    },
-    {
-        path: 'benches_racks_and_grips',
-        component:BenchRacksGripsComponent,
-        title: "Cardio Equipments | FitEssentials Hub"
-    },
-    {
-        path: 'accessories',
-        component: AccessoriesComponent,
-        title: "Accessories | FitEssentials Hub"
-    },
-    {
-        path: 'supplements',
-        component: SupplimentsComponent,
-        title: "Suppliments | FitEssentials Hub"
     },
     {
         path: 'forget-password',
@@ -187,6 +150,11 @@ export const routes: Routes = [
     {
         path:"supp-top-deals/:category",
         component:TopDealsProductsComponent,
+        title:"Top Deals | FitEssentials Hub"
+    },
+    {
+        path:"category/:key",
+        component:CommonComponentComponent,
         title:"Top Deals | FitEssentials Hub"
     },
 ];

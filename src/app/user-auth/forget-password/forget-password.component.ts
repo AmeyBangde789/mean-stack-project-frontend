@@ -27,11 +27,10 @@ export class ForgetPasswordComponent implements OnInit {
     this.authService.loginService(this.forgetForm.value)
     .subscribe({
       next:(res)=>{
-        alert(res.message)
         this.forgetForm.reset();
       },
       error:(err)=>{
-        alert (err.error.message)
+        
       }
     })
   }

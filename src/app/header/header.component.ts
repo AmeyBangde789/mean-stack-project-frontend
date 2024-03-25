@@ -12,18 +12,15 @@ import { SearchProductService } from '../services/search-product.service';
 import { LocalCartService } from '../services/local-cart.service';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
   selector: 'app-header',
   styleUrls: ['./header.component.css'],
   standalone: true,
   // Other properties...
   templateUrl: './header.component.html',
-  imports: [CommonModule, FontAwesomeModule, RouterModule, HttpClientModule]
+  imports: [CommonModule,FontAwesomeModule, RouterModule, HttpClientModule]
 })
 export class HeaderComponent implements OnInit {
-
- 
 
   faMagnifyingGlass = faMagnifyingGlass;
   faCircleUser = faUserCircle;
@@ -70,7 +67,7 @@ export class HeaderComponent implements OnInit {
       this.localCart.getCart()
     }
 
-    this.checkScreenSize
+    // this.checkScreenSize()
   }
 
   isVisible = false;
@@ -121,31 +118,27 @@ export class HeaderComponent implements OnInit {
   menu() {
     this.menuBar = !this.menuBar
   }
-
-  checkScreenSize() {
-    const isMobile = window.innerWidth <= 450;
-    let user = localStorage.getItem('user_id');
-    let admin = localStorage.getItem('Admin_id');
-    // if (isMobile && user) {
-    //   this.Router.navigate(['accounts']); // Navigate to mobile route
-    // } 
-    // else if(user){
-    //   this.Router.navigate(['accounts']);
-    // }
-    // else {
-    //   this.Router.navigate(['profile-info']); // Navigate to default route
-    // }   
-
-    // if(isMobile && admin){
-    //   this.Router.navigate(['admin-accounts']);
-    // }
-    // else if(admin){
-    //   this.Router.navigate(['admin-profile']);
-    // }
-    // else{
-    //   this.Router.navigate(['admin-profile']);
-    // }
+  menuClose(){
+    this.menuBar=false
   }
+
+  // checkScreenSize() {
+  //   const isMobile = window.innerWidth <= 450;
+  //   let user = localStorage.getItem('user_id');
+  //   let admin = localStorage.getItem('Admin_id');
+  //   if (isMobile && user) {
+  //     this.Router.navigate(['accounts']); // Navigate to mobile route
+  //   } 
+  //   else if(isMobile && admin){
+  //     this.Router.navigate(['admin-accounts']);
+  //   }
+  //   else if(user){
+  //     this.Router.navigate(['profile-info']);
+  //   }
+  //   else if(admin){
+  //     this.Router.navigate(['admin-profile']);
+  //   }
+  // }
 
   productDetails(){
     console.log('working')
