@@ -38,7 +38,7 @@ export class BestSellersComponent {
     })
   }
   viewAll() {
-    this.router.navigate(['best-seller'])
+    this.router.navigate(['best-seller-products'])
     window.scrollTo({top:0, behavior:"auto"})
   }
 }

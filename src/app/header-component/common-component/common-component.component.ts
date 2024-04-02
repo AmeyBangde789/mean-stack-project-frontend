@@ -13,13 +13,16 @@ import { GetAllProductsService } from '../../services/get-all-products.service';
 export class CommonComponentComponent {
 
   productList: any
+  show=false
 
   constructor(private activatedroute: ActivatedRoute, private getallproducts: GetAllProductsService) { }
   ngOnInit() {
+    this.show=true
     this.activatedroute.params.subscribe(params => {
       const key = params['key'];
       this.getallproducts.getProductsByCategory(key).subscribe((res) => {
         this.productList = res
+        this.show=false
       })
     })
   }

@@ -18,7 +18,7 @@ export class TopSuppDealsComponent {
   faIndianRupeeSign = faIndianRupeeSign
   faChevronRight =faChevronRight 
   products:any
-  selectedTagIndex: string | null = null;
+  selectedTagIndex: string ="Protine";
 
   constructor(private getAllproducts:GetAllProductsService, private router:Router){}
  
@@ -41,5 +41,6 @@ export class TopSuppDealsComponent {
 
   viewAll(){
     this.router.navigate([ `${this.selectedTagIndex}`]);
+    window.scrollTo({top:0, behavior:"auto"})
   }
 }

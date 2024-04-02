@@ -202,7 +202,6 @@ export class CartComponent implements OnInit {
       console.log('Incremented item:', item);
       this.getproducts()
 
-
       // Optionally, update local state or UI here
     });
   }

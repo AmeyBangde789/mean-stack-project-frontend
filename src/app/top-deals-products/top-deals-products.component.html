@@ -14,17 +14,14 @@
                 </div>
                 <div class="price">
                     <div class="cost" *ngIf="item.productDiscount>0">
-                        <p class="discountCost"><fa-icon [icon]="faIndianRupeeSign"
-                                class="icons uil-search open-search icon"></fa-icon> {{ item.productCost -
+                        <p class="discountCost"> {{ item.productCost -
                             item.productCost *
-                            item.productDiscount/100 | number:"1.0-0" }}</p>
-                        <p class="productCost"><fa-icon [icon]="faIndianRupeeSign"
-                                class="icons uil-search open-search"></fa-icon> {{item.productCost | number:"1.0-0"}}
+                            item.productDiscount/100 | currency:"INR" }}</p>
+                        <p class="productCost"> {{item.productCost | currency:"INR"}}
                         </p>
                     </div>
                     <div *ngIf="!item.productDiscount || item.productDiscount < 0 ">
-                        <p><fa-icon [icon]="faIndianRupeeSign" class="icons uil-search open-search"></fa-icon>
-                            {{item.productCost| number:"1.0-0"}}</p>
+                        <p>{{item.productCost | currency:"INR"}}</p>
                     </div>
                 </div>
             </div>
@@ -32,3 +29,6 @@
     </ng-container>
 </div>
 
+<div class="gif-container" *ngIf="show">
+    <img src="assets/loading.gif" alt="" class="gif">
+</div>

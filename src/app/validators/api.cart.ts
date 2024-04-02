@@ -1,3 +1,3 @@
 export const apiCart={
-    cartApiService: 'https://mean-project-backend-2.onrender.com/api/'
+    cartApiService: 'http://localhost:8700/api/'
 }

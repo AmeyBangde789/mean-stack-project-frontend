@@ -29,7 +29,6 @@ export class PaymentComponent {
   }
 
   popup=false
-  isBlur=false
 
   constructor(private cartService: CartService, private orderService:OrderService){}
   @Input() item:any
@@ -40,9 +39,8 @@ export class PaymentComponent {
     setTimeout(() => {
       if(this.popup=true){
         this.popup=false
-        this.isBlur=false
       }
-     }, 3000);
+     }, 4000);
      
     return this.cartService.currentCart().subscribe((result)=>{
       this.cartData=result
@@ -95,13 +93,14 @@ export class PaymentComponent {
     this.orderService.orderDetails(orderData).subscribe((result)=>{
       this.cartService.deleteAllcart(this.item.userId).subscribe(()=>{
       })
-      this.isBlur=true
+      
       this.popup=true
       setTimeout(() => {
         this.router.navigate(['my-orders'])
       }, 3000);
-      this.cartService.getCartList(this.item.userId);
-      this.cartService.currentCart()
+      let userStore = localStorage.getItem('user_id');
+      let userData = userStore && JSON.parse(userStore);
+      this.cartService.getCartList(userData._id)
     })
   }
 }

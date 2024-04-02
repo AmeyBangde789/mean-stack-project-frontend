@@ -39,6 +39,7 @@ export class ProductDetailsComponent {
   up = faAngleUp
   down = faAngleDown
   heart = faHeart
+  gif=false
 
   marked = true
   unmarked=false
@@ -58,12 +59,14 @@ export class ProductDetailsComponent {
   constructor(private activatedRoute: ActivatedRoute, private searchproductservice: SearchProductService, private product: CartService, private getAllproducts: GetAllProductsService, private wishlist: WishlistService, private router:Router) { }
 
   ngOnInit(): void {
+    this.gif=true
     this.activatedRoute.params.subscribe(params => {
       const productId = params['id'];
 
       productId && this.searchproductservice.searchproductbyid(productId)
         .subscribe(res => {
           this.productData = res;
+          this.gif=false
           window.scrollTo({top:0, behavior:"auto"})
           let cartData = localStorage.getItem('cartProducts');
           if (productId && cartData) {
