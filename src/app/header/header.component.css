@@ -91,6 +91,7 @@ input:focus {
 }
 
 .mg {
+    cursor: pointer;
     width: 5.8%;
     height: 100%;
     display: flex;
@@ -123,11 +124,12 @@ input:focus {
 
 .result {
     position: absolute;
+    cursor: pointer;
     display: list-item;
     z-index: 10;
     background-color: white;
-    width: 45.7%;
-    top: 10.3%;
+    width: 40.6%;
+    top: 10.2%;
     list-style-type: none;
     border-radius: 6px;
     border: 0.4px solid rgb(151, 151, 151);

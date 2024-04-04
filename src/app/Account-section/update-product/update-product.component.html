@@ -71,11 +71,18 @@
                     </div>
                 </div>
 
-
+                <div class="input">
+                    <span class="input-heading">Features of Product</span>
+                    <textarea formControlName="product" type="text"
+                        ngModel="{{productList.productFeature}}"></textarea>
+                    <span
+                        *ngIf="updateProductForm.hasError('required','productFeature') && updateProductForm.controls['productFeature'].dirty"
+                        class="required"> *Please Enter the Features of Product</span><br>
+                </div>
                 <div class="input">
                     <span class="input-heading">Description of Product</span>
-                    <input formControlName="productDescription" type="text"
-                        ngModel="{{productList.productDescription}}">
+                    <textarea formControlName="productDescription" type="text"
+                        ngModel="{{productList.productDescription}}"></textarea>
                     <span
                         *ngIf="updateProductForm.hasError('required','productDescription') && updateProductForm.controls['productDescription'].dirty"
                         class="required"> *Please Enter the Description of Product</span><br>

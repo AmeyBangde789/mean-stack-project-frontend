@@ -24,6 +24,7 @@ export class AdminLoginComponent {
   check=faCircleCheck
   popup=false
   isBlur=false
+  gif=false
 
   ngOnInit(): void {
    this.loginForm = this.fb.group({
@@ -40,6 +41,7 @@ export class AdminLoginComponent {
   }
 
   login(){
+    this.gif=true
     this.authService.adminLoginService(this.loginForm.value)
     .subscribe({
       next:(res)=>{
@@ -47,6 +49,7 @@ export class AdminLoginComponent {
         this.loginForm.reset();
         this.isBlur=true
         this.popup=true
+        this.gif=false
         setTimeout(() => {
           this.router.navigate(['']);
         }, 2000);
@@ -54,6 +57,7 @@ export class AdminLoginComponent {
       error:(err)=>{
         console.log(err);
         this.show=true
+        this.gif=false
         this.loginForm.reset()
       }
     })

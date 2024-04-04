@@ -16,7 +16,8 @@
                 <div class="input">
                     <input formControlName="email" type="text" placeholder=" Email">
                     <span *ngIf="loginForm.hasError('required','email') && loginForm.controls['email'].dirty"
-                        class="required">*Email is required</span><br>
+                        class="required">*Email is required</span>
+                        <span *ngIf="loginForm.hasError('email','email')" class="required">*Email is invalid</span><br>
                 </div>
 
                 <div class="input">
@@ -42,3 +43,7 @@
     </div>
 </div>
 <div class="pop-up" *ngIf="popup">Logged in successfully<fa-icon [icon]="check" class="check"></fa-icon></div>
+
+<div class="gif-container" *ngIf="gif">
+    <img src="assets/loading.gif" alt="" class="gif">
+</div>

@@ -49,7 +49,8 @@ export class WishListComponent {
     })
   }
 
-  moveTocart(productData:cart){
+  moveTocart(productData:any){
+    console.log(productData)
     this.cartService.addToCart(productData).subscribe(()=>{
       this.delete(productData.productId,productData.userId)
       this.getwishListProducts()

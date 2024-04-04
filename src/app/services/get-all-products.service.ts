@@ -91,9 +91,9 @@ export class GetAllProductsService {
 
       { category: "Accessories", type: "Gloves and Wrist Straps" },
       { category: "Accessories", type: "Weightlifting Belts" },
-      { category: "Accessories", type: "Resistance Bands and Sling Trainer" },
+      { category: "Accessories", type: "Resistance Bands and Skipping Ropes" },
       { category: "Accessories", type: "Gym Bags and Sacks" },
-      { category: "Accessories", type: "Exercise Mats" },
+      { category: "Accessories", type: "Exercise Mats and Sling Trainer" },
       { category: "Accessories", type: "Medicine Balls and Stability Balls" },
 
       { category: "Supplements", type: "Protine" },

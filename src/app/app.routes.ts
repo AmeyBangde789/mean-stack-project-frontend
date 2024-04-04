@@ -6,7 +6,7 @@ import { CartComponent } from './header-component/cart/cart.component';
 import { ForgetPasswordComponent } from './user-auth/forget-password/forget-password.component';
 import { ResetComponent } from './user-auth/reset/reset.component';
 import { AccountsComponent } from './Account-section/accounts/accounts.component';
-import { adminAuthGuard, authGuard } from './auth.guard';
+import { adminAuthGuard, authGuard, loginAuthGuard } from './auth.guard';
 import { AdminLoginComponent } from './user-auth/admin-login/admin-login.component';
 import { AdminAccountsComponent } from './Account-section/admin-accounts/admin-accounts.component';
 import { SearchedProductsComponent } from './searched-products/searched-products.component';
@@ -34,32 +34,44 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent,
-        title: "Login | FitEssentials Hub"
+        title: "Login | FitEssentials Hub",
+        canActivate: [loginAuthGuard]
+    },
+    {
+        path: 'admin-login',
+        component: AdminLoginComponent,
+        title: "Admin Login | FitEssentials Hub",
+        canActivate: [loginAuthGuard]
     },
     {
         path: 'registration',
         component: RegistrationComponent,
-        title: "Registration | FitEssentials Hub"
+        title: "Registration | FitEssentials Hub",
+        canActivate: [loginAuthGuard]
     },
     {
         path: 'add-products',
         component: AddProductsComponent,
-        title: "Add Products | FitEssentials Hub"
+        title: "Add Products | FitEssentials Hub",
+        canActivate: [adminAuthGuard]
     },
     {
         path: 'cart',
         component: CartComponent,
         title: "Cart | FitEssentials Hub"
+
     },
     {
         path: 'forget-password',
         component: ForgetPasswordComponent,
-        title: "Forget Password | FitEssentials Hub"
+        title: "Forget Password | FitEssentials Hub",
+        canActivate: [loginAuthGuard]
     },
     {
         path: 'reset/:token',
         component: ResetComponent,
-        title: "Reset Password | FitEssentials Hub"
+        title: "Reset Password | FitEssentials Hub",
+        canActivate: [loginAuthGuard]
     },
     {
         path: 'accounts',
@@ -67,12 +79,7 @@ export const routes: Routes = [
         title: "Accounts | FitEssentials Hub",
         canActivate: [authGuard]
     },
-    {
-        path: 'admin-login',
-        component: AdminLoginComponent,
-        title: "Admin Login | FitEssentials Hub",
-
-    },
+ 
     {
         path: 'admin-accounts',
         component: AdminAccountsComponent,
@@ -95,12 +102,14 @@ export const routes: Routes = [
     {
         path: 'address',
         component: AddressComponent,
-        title: "Address | FitEssentials Hub"
+        title: "Address | FitEssentials Hub",
+        canActivate: [authGuard]
     },
     {
         path: 'product-list',
         component: ProductListComponent,
-        title: "Product List | FitEssentials Hub"
+        title: "Product List | FitEssentials Hub",
+        canActivate: [adminAuthGuard]
     },
     {
         path: 'update-product/:id',
@@ -110,22 +119,26 @@ export const routes: Routes = [
     {
         path: 'wishlist',
         component: WishListComponent,
-        title: "Wishlist | FitEssentials Hub"
+        title: "Wishlist | FitEssentials Hub",
+        canActivate: [authGuard]
     },
     {
         path: 'profile-info',
         component: ProfileInfoComponent,
-        title: "Profile Info | FitEssentials Hub"
+        title: "Profile Info | FitEssentials Hub",
+        canActivate: [authGuard]
     },
     {
         path: 'my-orders',
         component: MyOrdersComponent,
-        title: "My Orders | FitEssentials Hub"
+        title: "My Orders | FitEssentials Hub",
+        canActivate: [authGuard]
     },
     {
         path: 'address-info',
         component: AddressInfoComponent,
-        title: "Address Info | FitEssentials Hub"
+        title: "Address Info | FitEssentials Hub",
+        canActivate: [authGuard]
     },
     {
         path:"best-seller",
@@ -135,7 +148,8 @@ export const routes: Routes = [
     {
         path:"admin-profile",
         component:AdminProfileInfoComponent,
-        title:"Admin Profile | FitEssentials Hub"
+        title:"Admin Profile | FitEssentials Hub",
+        canActivate: [adminAuthGuard]
     },
     {
         path:":key",

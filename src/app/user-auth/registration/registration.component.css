@@ -7,7 +7,6 @@
 
 .form {
     padding-bottom: 40px;
-    height: 90vh;
     background-color: rgb(241, 241, 241);
     display: flex;
     justify-content: center;
@@ -142,4 +141,22 @@ button:hover {
 }
 .blur-bg{
     filter:blur(10px)
+}
+
+.gif-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    min-height: 50vh;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.gif{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
+    
 }

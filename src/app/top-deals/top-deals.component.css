@@ -25,6 +25,7 @@
 }
 
 .card {
+    cursor: pointer;
     min-width: 200px;
     padding: 10px;
     margin: 5px;
@@ -32,6 +33,10 @@
     background-color: white;
     border: 1px solid rgb(223, 223, 223);
     box-sizing: border-box;
+}
+.card:hover .name {
+    cursor: pointer;
+    color: rgb(0, 153, 255);
 }
 
 .image {

@@ -1,3 +1,3 @@
 export const apiProducts={
-    productApiService: 'http://localhost:8800/api/'
+    productApiService: 'https://mean-project-backend-4.onrender.com/api/'
 }

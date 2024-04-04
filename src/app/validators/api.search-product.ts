@@ -1,3 +1,3 @@
 export const apisearchProduct={
-    searchProductServiceApi: 'http://localhost:8800/api/route/',
+    searchProductServiceApi: 'https://mean-project-backend-4.onrender.com/api/route/',
 }

@@ -187,6 +187,7 @@ export class ProductDetailsComponent {
 
   userLogged=false
   addToWishlist(productData: any) {
+    this.productData.quantity=1
     let user = localStorage.getItem("user_id");
     let userId = user && JSON.parse(user)._id;
     productData.userId=userId

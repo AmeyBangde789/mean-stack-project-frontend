@@ -3,3 +3,22 @@ app-footer{
     bottom: 0;
     width: 100%;
 }
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+}
+
+.logo {
+    margin-left: 5%;
+}
+
+.img1 {
+    margin-top: 3px;
+    height: 40px;
+    width: 150px;
+    border: none;
+}

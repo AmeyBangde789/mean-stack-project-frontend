@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit{
   show=false
   isBlur=false
   registerForm !: FormGroup;
+  gif=false
 
   ngOnInit(): void {
    this.registerForm = this.fb.group({
@@ -49,17 +50,20 @@ export class RegistrationComponent implements OnInit{
   }
 
   register(){
+    this.gif=true
    this.authService.registerService(this.registerForm.value)
    .subscribe({
     next:(res)=>{
       this.registerForm.reset();
       this.isBlur=true
       this.show=true
+      this.gif=false
       setTimeout(() => {
         this.router.navigate(['login'])
       }, 2000);
     },
     error:(err)=>{
+      this.gif=false
     }
    })
   }

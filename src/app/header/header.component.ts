@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, HostListener } from '@angular/core';
+import { Component, OnInit, inject, HostListener,ElementRef, ViewChild, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -21,7 +21,9 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   imports: [CommonModule,FontAwesomeModule, RouterModule, HttpClientModule]
 })
 export class HeaderComponent implements OnInit {
-
+  @ViewChild('searchBar') searchBar!: ElementRef;
+  @ViewChild('searchInput') searchInput!: ElementRef;
+  
   faMagnifyingGlass = faMagnifyingGlass;
   faCircleUser = faUserCircle;
   faCartShopping = faCartShopping;
@@ -92,7 +94,6 @@ export class HeaderComponent implements OnInit {
         }
         if (!result.length) {
           this.noResult = true
-
         }
         else if (result.length) {
           this.noResult = false
@@ -103,6 +104,7 @@ export class HeaderComponent implements OnInit {
   }
   hideSearch() {
     this.searchResult = undefined
+    this.searchInput.nativeElement.value = '';
   }
   submitSearch(val: string) {
     this.Router.navigate([`search/${val}`])
@@ -140,7 +142,18 @@ export class HeaderComponent implements OnInit {
   //   }
   // }
 
-  productDetails(){
-    console.log('working')
+  productDetails(id:string,type:string){
+    this.hideSearch()
+   this.Router.navigate([`details/${id}/${type}`])
+  }
+
+  @HostListener('document:click', ['$event'])
+ 
+  onClick(event: MouseEvent) {
+    // Check if the clicked element is outside of the search bar
+    if (!this.searchBar.nativeElement.contains(event.target)) {
+      // Click occurred outside of the search bar, close it
+      this.hideSearch()
+    }
   }
 }

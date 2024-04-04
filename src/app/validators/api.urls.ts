@@ -1,3 +1,3 @@
 export const apiUrls={
-    authServiceApi: 'http://localhost:8000/api/'
+    authServiceApi: 'https://mean-project-backend-1.onrender.com/api/'
 }

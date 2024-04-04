@@ -342,6 +342,7 @@ input {
 }
 
 .wishlist {
+    cursor: pointer;
     top: 16%;
     right: 10%;
     position: absolute;
@@ -368,6 +369,18 @@ input {
     top: 11%;
     right: 5%;
     z-index: 999;
+}
+.gif-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    min-height: 50vh;
+}
+.gif{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 40px;
 }
 
 @media(max-width:900px) {

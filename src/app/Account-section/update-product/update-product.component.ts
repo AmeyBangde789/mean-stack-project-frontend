@@ -31,6 +31,7 @@ export class UpdateProductComponent {
         productWeight: ['', Validators.required],
         productCategory: ['', Validators.required],
         productType: ['', Validators.required],
+        productFeature: [''],
         productDescription: ['', Validators.required],
         productImage: ['', Validators.required],
       });

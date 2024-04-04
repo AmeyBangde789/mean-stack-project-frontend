@@ -18,28 +18,58 @@ export class BestSellersComponent {
   faChevronLeft = faChevronLeft
   products: any
   selectedTagIndex: any
+  currentIndex = 0;
+  screen:any=30
+  gif=false
+
   constructor(private orderService: OrderService, private router: Router) { }
 
 
   ngOnInit() {
+    this.checkScreen()
+    this.gif=true
     return this.orderService.bestSellers('Weights and Barbells').subscribe((res) => {
+      this.gif=false
       this.products = res
       this.selectedTagIndex = 'Weights and Barbells'
-
-      this.products = this.products.slice(0, 6);
+      this.products = this.products.slice(0, 8);
     })
-
   }
   function(category: string) {
+    this.gif=true
     this.selectedTagIndex = category
+    this.currentIndex=0
     return this.orderService.bestSellers(category).subscribe((res) => {
+      this.gif=false
       this.products = res
-      this.products = this.products.slice(0, 6);
+      this.products = this.products.slice(0, 8);
     })
+
   }
   viewAll() {
-    this.router.navigate(['best-seller-products'])
+    this.router.navigate(['best-seller'])
     window.scrollTo({top:0, behavior:"auto"})
+  }
+
+  slideLeft() {
+    if (this.currentIndex > 0) {
+      this.currentIndex--;
+    }
+
+  }
+
+  rightButton=true
+  slideRight() {
+    if (this.currentIndex < this.products.length - 1 ) {
+      this.currentIndex++;
+    }
+  }
+
+  checkScreen(){
+    const isMobile = window.innerWidth <1000 ;
+    if(isMobile){
+      this.screen=70
+    }
   }
 }
 

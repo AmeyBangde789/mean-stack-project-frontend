@@ -14,6 +14,7 @@ import { RouterModule } from '@angular/router';
 export class BestSellerProductsComponent {
   productList: any
   show=false
+  
 
 
   constructor(private orderService: OrderService) { }
@@ -23,4 +24,5 @@ export class BestSellerProductsComponent {
       this.productList = res
     })
   }
+
 }

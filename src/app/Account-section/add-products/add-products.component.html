@@ -70,7 +70,7 @@
 
                 <div class="input">
                     <span class="input-heading">Features of product</span>
-                    <input formControlName="productFeature" type="text">
+                    <textarea formControlName="productFeature" type="text"></textarea>
                     <span
                         *ngIf="addproductForm.hasError('required','productFeature') && addproductForm.controls['productFeature'].dirty"
                         class="required">*Please Enter the Features of Product</span><br>
@@ -78,7 +78,7 @@
 
                 <div class="input">
                     <span class="input-heading">Description of product</span>
-                    <input formControlName="productDescription" type="text">
+                    <textarea formControlName="productDescription" type="text"></textarea>
                     <span
                         *ngIf="addproductForm.hasError('required','productDescription') && addproductForm.controls['productDescription'].dirty"
                         class="required">*Please Enter the Description of Product</span><br>

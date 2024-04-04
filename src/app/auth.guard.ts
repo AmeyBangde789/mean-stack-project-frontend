@@ -23,3 +23,15 @@ export const adminAuthGuard: CanActivateFn = (route, state) => {
   return true;
 
 };
+export const loginAuthGuard: CanActivateFn = (route, state) => {
+  let _router = inject(Router);
+
+  let isLogged=localStorage.getItem('Admin_id') || localStorage.getItem('user_id')
+  if(isLogged){
+    _router.navigate([""])
+    return false;
+  }
+  return true;
+
+};
+

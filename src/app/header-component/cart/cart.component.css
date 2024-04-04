@@ -128,6 +128,7 @@ input {
 
 
 .inc-dec button {
+    cursor: pointer;
     font-weight: bolder;
     background-color: black;
     color: white;
@@ -163,6 +164,7 @@ input {
 }
 
 .btn {
+    cursor: pointer;
     margin-top: 20px;
     width: 150px;
     height: 40px;
@@ -175,6 +177,7 @@ input {
 }
 
 .btn-2 {
+    cursor: pointer;
     font-size: 12px;
     width: 30px;
     height: 30px;
@@ -188,6 +191,7 @@ input {
 }
 
 .remove {
+    cursor: pointer;
     display: hidden;
     border-bottom: 0.5px solid rgb(231, 229, 229);
     display: flex;

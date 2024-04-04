@@ -1,3 +1,3 @@
 export const apiOrder={
-    orderApiService: 'http://localhost:8100/api/'
+    orderApiService: 'https://mean-project-backend-3.onrender.com/api/'
 }

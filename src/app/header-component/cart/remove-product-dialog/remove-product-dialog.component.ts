@@ -34,7 +34,7 @@ export class RemoveProductDialogComponent {
   wishList() {
     console.log(this.item.userId)
     this.wishListService.getbyuserIdandproductId(this.item.productId, this.item.userId).subscribe((result) => {
-      if (result.length>=1) {
+      if (result.length>0) {
         alert('product is already in wishlist')
         this.remove()
       } else {

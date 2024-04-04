@@ -27,6 +27,7 @@ export class LoginComponent {
   check=faCircleCheck
   popup=false
   isBlur=false
+  gif=false
 
   constructor(private product: CartService) { }
   ngOnInit(): void {
@@ -44,6 +45,7 @@ export class LoginComponent {
   }
 
   login() {
+    this.gif=true
     this.authService.loginService(this.loginForm.value)
       .subscribe({
         next: (res) => {
@@ -52,12 +54,14 @@ export class LoginComponent {
           this.localCartToRemoteCart()
           this.isBlur=true
           this.popup=true
+          this.gif=false
           setTimeout(() => {
             this.router.navigate(['']);
           }, 2000);
         },
         error: (err) => {
           this.show=true
+          this.gif=false
           this.loginForm.reset()
         }
       })

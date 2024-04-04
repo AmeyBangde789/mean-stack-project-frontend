@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { cart, product, wishList } from '../data-type';
+import { cart, product } from '../data-type';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { apiCart } from '../validators/api.cart';
