@@ -14,7 +14,7 @@
         <li *ngFor="let item of searchResult" (click)="productDetails(item._id,item.productType)">
           <img src="{{item.productImage}}" >
           <a
-            style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 200ch;">{{item.productName}}</a>
+            style="white-space:nowrap; overflow:hidden; text-overflow: ellipsis; max-width: 200ch;">{{item.productBrand}} {{item.productName}}</a>
         </li>
         <li *ngIf="noResult" class="no-result"><a>No result found...</a></li>
       </ul>
