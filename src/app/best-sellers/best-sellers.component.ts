@@ -46,7 +46,8 @@ export class BestSellersComponent {
     })
 
   }
-  viewAll() {
+  
+   viewAll() {
     this.router.navigate(['best-seller'])
     window.scrollTo({top:0, behavior:"auto"})
   }

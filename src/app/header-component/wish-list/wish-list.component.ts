@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AccountsComponent } from '../../Account-section/accounts/accounts.component';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import { cart } from '../../data-type';
 import { CartService } from '../../services/cart.service';
 
 @Component({

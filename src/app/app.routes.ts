@@ -85,13 +85,11 @@ export const routes: Routes = [
         component: AdminAccountsComponent,
         title: "Admin Account | FitEssentials Hub",
         canActivate: [adminAuthGuard]
-
     },
     {
         path: 'search/:key',
         component: SearchedProductsComponent,
         title: "Search  | FitEssentials Hub",
-
     },
     {
         path: 'details/:id/:type',

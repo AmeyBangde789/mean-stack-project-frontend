@@ -22,7 +22,6 @@ import { RemoveProductDialogComponent } from './remove-product-dialog/remove-pro
   styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
-
   rupee = faIndianRupee
   heart = faHeart
 
