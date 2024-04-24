@@ -1,5 +1,5 @@
 export const apiaddproduct={
-    addproductServiceApi: 'https://mean-project-backend-4.onrender.com/api/addproduct/'
+    addproductServiceApi: 'https://fit-essentials-hub-backend-4.onrender.com/api/addproduct/'
     
 
 }

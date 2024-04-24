@@ -1,3 +1,3 @@
 export const apiProducts={
-    productApiService: 'https://mean-project-backend-4.onrender.com/api/'
+    productApiService: 'https://fit-essentials-hub-backend-4.onrender.com/api/'
 }

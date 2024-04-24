@@ -1,3 +1,3 @@
 export const apiUrls={
-    authServiceApi: 'https://mean-project-backend-1.onrender.com/api/'
+    authServiceApi: 'https://fit-essentials-hub-backend-1-1.onrender.com/api/'
 }

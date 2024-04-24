@@ -1,3 +1,3 @@
 export const apisearchProduct={
-    searchProductServiceApi: 'https://mean-project-backend-4.onrender.com/api/route/',
+    searchProductServiceApi: 'https://fit-essentials-hub-backend-4.onrender.com/api/route/',
 }
